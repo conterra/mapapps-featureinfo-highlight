@@ -1,0 +1,239 @@
+{
+  "properties": {
+    "title": "FeatureInfo Drawer Sample",
+    "amdPackages": "apprt@^3.4.0"
+  },
+  "load": {
+    "bundleLocations": [
+      "localbundles",
+      "bundles"
+    ],
+    "allowedBundles": [
+      "system@^3.4.0",
+      "splashscreen@^3.4.0",
+      "map@^3.4.0",
+      "themes@^3.4.0",
+      "templates@^3.4.0",
+      "templatelayout@^3.4.0",
+      "windowmanager@^3.4.0",
+      "toolset@^3.4.0",
+      "toolrules@^3.4.0",
+      "basemaptoggler@^3.4.0",
+      "console@^3.4.0",
+      "featureinfo@^3.4.0",
+      "banner@^3.4.0",
+      "dn_featureinfodrawer"
+    ],
+    "skipBundles": []
+  },
+  "bundles": {
+    "banner": {
+      "BannerWidget": {
+        "label": "Developer Network",
+        "image": "https://www.conterra.de/~/media/conterra/images/site_logos/conterra-logo.ashx",
+        "imagePosition": "above",
+        "link": "http://developernetwork.conterra.de"
+      }
+    },
+    "mapflow": {
+      "MapFlow": {
+        "nodeDepth": 5,
+        "showScrollBar": true,
+        "singleSelectionMode": false,
+        "autoZoomTo": false,
+        "autoFlipActiveCover": true,
+        "autoActivate": false,
+        "contentFlowProperties": {
+          "useAddOns": false,
+          "circularFlow": true,
+          "reflectionHeight": 0,
+          "maxItemHeight": 200,
+          "relativeItemPosition": "top center",
+          "visibleItems": 4
+        }
+      }
+    },
+    "templates": {
+      "TemplateSelector": {
+        "componentEnabled": false
+      },
+      "TemplateModel": {
+        "_selectedTemplate": "seasons"
+      }
+    },
+    "map": {
+      "MapState": {
+        "initialExtent": {
+          "xmin": -1100000,
+          "ymin": 4000000,
+          "xmax": 3500000,
+          "ymax": 8800000,
+          "spatialReference": {
+            "wkid": 3857
+          }
+        }
+      },
+      "MapModelFactory": {
+        "_configData": {
+          "maps": [
+            {
+              "id": "default",
+              "glass_pane": [],
+              "operationalLayer": [
+                {
+                  "id": "bundeslaender",
+                  "title": "Bundesländer",
+                  "enabled": true,
+                  "service": "service_50538",
+                  "layers": [
+                    "0"
+                  ]
+                },
+                {
+                  "id": "natura2000",
+                  "title": "Natura 2000",
+                  "enabled": true,
+                  "service": "natura000",
+                  "layers": [
+                    "*"
+                  ]
+                }
+              ],
+              "baseLayer": [
+                {
+                  "title": "Streets",
+                  "service": "streets",
+                  "enabled": false
+                },
+                {
+                  "title": "Topo",
+                  "service": "worldTopo",
+                  "enabled": false
+                },
+                {
+                  "title": "Dark Canvas",
+                  "service": "darkcanvas",
+                  "enabled": true
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "MappingResourceRegistryFactory": {
+        "_knownServices": {
+          "services": [
+            {
+              "id": "worldTopo",
+              "type": "AGS_TILED",
+              "url": "http://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer"
+            },
+            {
+              "id": "streets",
+              "type": "AGS_TILED",
+              "url": "http://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer"
+            },
+            {
+              "id": "darkcanvas",
+              "type": "AGS_TILED",
+              "url": "http://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Dark_Gray_Base/MapServer"
+            },
+            {
+              "id": "natura000",
+              "url": "http://discomap.eea.europa.eu/arcgis/rest/services/Bio/Natura2000_Dyna_WM/MapServer",
+              "type": "AGS_DYNAMIC",
+              "title": "Natura 2000 Protected Areas",
+              "description": "Natura 2000 is the key instrument to protect biodiversity in the European Union. It is an ecological network of protected areas, set up to ensure the survival of Europe's most valuable species and habitats. Natura 2000 is based on the 1979 Birds Directive and the 1992 Habitats Directive. The green infrastructure it provides safeguards numerous ecosystem services and ensures that Europe's natural systems remain healthy and resilient.",
+              "layers": [
+                {
+                  "id": "0",
+                  "title": "Query Sites",
+                  "enabled": false
+                },
+                {
+                  "id": "1",
+                  "title": "Habitats Directive Sites (SCI)",
+                  "enabled": true
+                },
+                {
+                  "id": "2",
+                  "title": "Habitats Directive Sites (SCI)",
+                  "parentId": "1",
+                  "maxScale": 10000000,
+                  "enabled": true
+                },
+                {
+                  "id": "3",
+                  "title": "Habitats Directive Sites (SCI)",
+                  "parentId": "1",
+                  "maxScale": 300000,
+                  "minScale": 9999999,
+                  "enabled": true
+                },
+                {
+                  "id": "4",
+                  "title": "Habitats Directive Sites (SCI)",
+                  "parentId": "1",
+                  "minScale": 299999,
+                  "enabled": true
+                },
+                {
+                  "id": "5",
+                  "title": "Bird Directive Sites (SPA)",
+                  "enabled": true
+                },
+                {
+                  "id": "6",
+                  "title": "Bird Directive Sites (SPA)",
+                  "parentId": "5",
+                  "maxScale": 10000000,
+                  "enabled": true
+                },
+                {
+                  "id": "7",
+                  "title": "Bird Directive Sites (SPA)",
+                  "parentId": "5",
+                  "maxScale": 300000,
+                  "minScale": 9999999,
+                  "enabled": true
+                },
+                {
+                  "id": "8",
+                  "title": "Bird Directive Sites (SPA)",
+                  "parentId": "5",
+                  "minScale": 299999,
+                  "enabled": true
+                }
+              ]
+            },
+            {
+              "id": "service_50538",
+              "url": "http://services.arcgis.com/OLiydejKCZTGhvWg/arcgis/rest/services/Bev%C3%B6lkerungNationalit%C3%A4t1B/FeatureServer",
+              "type": "AGS_FEATURE",
+              "title": "Zensus Deutschland 2011",
+              "description": "Bevölkerung nach Geschlecht, Staatsangehörigkeit (Deutsche/Ausländer) und Alter (5 Altersklassen) für Gemeinden, Kreise und Länder, Ergebnisse des Zensus am 9. Mai 2011",
+              "layers": [
+                {
+                  "id": "0",
+                  "title": "Zensus 2011 Bundesländer",
+                  "enabled": true
+                },
+                {
+                  "id": "1",
+                  "title": "Zensus 2011 Kreise",
+                  "enabled": true
+                },
+                {
+                  "id": "2",
+                  "title": "Zensus 2011 Gemeinden",
+                  "enabled": true
+                }
+              ],
+              "options": {}
+            }
+          ]
+        }
+      }
+    }
+  }
+}

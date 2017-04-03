@@ -1,0 +1,79 @@
+{
+  "Bundle-SymbolicName": "dn_featureinfodrawer",
+  "Bundle-Version": "1.0.0-SNAPSHOT",
+  "Bundle-Name": "${bundleName}",
+  "Bundle-Description": "${bundleDescription}",
+  "Bundle-Vendor": "con terra GmbH",
+  "Product-Name": "con terra Developer Network",
+  "Bundle-Category": [
+    "sample"
+  ],
+  "Bundle-Icon": {},
+  "Bundle-License": {},
+  "Require-Bundle": [
+    {
+      "name": "map",
+      "version": "^3.4.0"
+    },
+    {
+      "name": "featureinfo",
+      "version": "^3.4.0"
+    },
+    {
+      "name": "contentviewer",
+      "version": "^3.4.0"
+    }
+  ],
+  "Components": [
+    {
+      "name": "FeatureInfoDrawer",
+      "propertiesConstructor": true,
+      "properties": {
+      },
+      "references": [
+        {
+          "name": "_drawGeometryHandler",
+          "providing": "dn_featureinfoselector.DrawGeometryHandler"
+        },
+        {
+          "name": "_contentViewer",
+          "providing": "ct.contentviewer.ContentViewer"
+        },
+        {
+          "name": "_infoViewer",
+          "providing": "infoviewer.InfoViewer"
+        }
+      ]
+    },
+    {
+      "name": "FeatureInfoController",
+      "propertiesConstructor": true,
+      "properties": {
+      },
+      "provides": [
+      ],
+      "references": [
+      ]
+    },
+    {
+      "name": "FeatureInfoWidget",
+      "propertiesConstructor": true,
+      "properties": {
+      },
+      "provides": [
+      ],
+      "references": [
+      ]
+    },
+    {
+      "name": "DrawGeometryHandler",
+      "provides": "dn_featureinfoselector.DrawGeometryHandler",
+      "references": [
+        {
+          "name": "_mapModel",
+          "providing": "ct.mapping.map.MapModel"
+        }
+      ]
+    }
+  ]
+}
