@@ -29,12 +29,18 @@ define([
                     this._drawGeometryHandler.drawGeometry(feature.trueGeometry);
                 }
             }, this);
-            this.connect(this._contentViewer, "showContentInfo", function (content, context, hints) {
+            /*this.connect(this._contentViewer, "showContentInfo", function (content, context, hints) {
+             this._drawGeometryHandler.clearGraphics();
+             if (content.geometry.type === "polygon") {
+             if (this.infoWindow)
+             this.infoWindow.window.hide();
+             this._drawGeometryHandler.drawGeometry(content.geometry);
+             }
+             }, this);*/
+            this.connect(this._contentViewer, "_displayWindow", function (widget, geometry, rule) {
                 this._drawGeometryHandler.clearGraphics();
-                if (content.geometry.type === "polygon") {
-                    if (this.infoWindow)
-                        this.infoWindow.window.hide();
-                    this._drawGeometryHandler.drawGeometry(content.geometry);
+                if (geometry.type === "polygon") {
+                    this._drawGeometryHandler.drawGeometry(geometry);
                 }
             }, this);
             this.connect(this._infoViewer, "onShowNewInfoWindow", function (e) {
