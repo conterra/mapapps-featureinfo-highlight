@@ -64,13 +64,11 @@
     "map": {
       "MapState": {
         "initialExtent": {
-          "xmin": -1100000,
-          "ymin": 4000000,
-          "xmax": 3500000,
-          "ymax": 8800000,
-          "spatialReference": {
-            "wkid": 3857
-          }
+          "xmin": 155564.44551162992,
+          "xmax": 2112352.369611622,
+          "ymin": 6430574.811314062,
+          "ymax": 7336812.21866287,
+          "wkid": 3857
         }
       },
       "MapModelFactory": {
