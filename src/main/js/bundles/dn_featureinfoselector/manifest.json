@@ -74,6 +74,26 @@
           "providing": "ct.mapping.map.MapModel"
         }
       ]
+    },
+    {
+      "name": "ContentRegistration",
+      "impl": "ct/Stateful",
+      "provides": [
+        "ct.contentviewer.ContentRule"
+      ],
+      "propertiesConstructor": true,
+      "properties": {
+        "contentRules": [
+          {
+            "matches": {
+              "context": {
+                "mapModelNodeId": "featureInfoDrawerGeometry"
+              }
+            },
+            "skip": true
+          }
+        ]
+      }
     }
   ]
 }

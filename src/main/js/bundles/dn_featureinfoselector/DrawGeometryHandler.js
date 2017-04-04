@@ -26,7 +26,7 @@ define([
 ], function (declare, GraphicsRenderer, Color, Circle, Polygon, Font, TextSymbol, SimpleFillSymbol, SimpleLineSymbol) {
     return declare([], {
         activate: function () {
-            this.graphicsRenderer = GraphicsRenderer.createForGraphicsNode("featureInfoGeometry", this._mapModel);
+            this.graphicsRenderer = GraphicsRenderer.createForGraphicsNode("featureInfoDrawerGeometry", this._mapModel);
             this.graphicsRenderer.get("graphicsNode").set("renderPriority", 100);
             if (this.graphicsRenderer.get("hasNodeCreated")) {
                 this._mapModel.fireModelStructureChanged({
