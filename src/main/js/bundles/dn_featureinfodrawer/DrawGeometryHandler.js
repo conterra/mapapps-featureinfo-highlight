@@ -53,7 +53,7 @@ define([
             return new SimpleFillSymbol(
                 SimpleFillSymbol.STYLE_SOLID,
                 new SimpleLineSymbol(
-                    SimpleLineSymbol.STYLE_DASHDOT,
+                    SimpleLineSymbol.STYLE_SOLID,
                     new Color([255, 255, 0]),
                     3
                 ),
