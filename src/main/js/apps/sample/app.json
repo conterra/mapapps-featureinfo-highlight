@@ -81,15 +81,6 @@
               "glass_pane": [],
               "operationalLayer": [
                 {
-                  "id": "bundeslaender",
-                  "title": "Bundesländer",
-                  "enabled": true,
-                  "service": "service_50538",
-                  "layers": [
-                    "0"
-                  ]
-                },
-                {
                   "id": "natura2000",
                   "title": "Natura 2000",
                   "enabled": true,
@@ -205,31 +196,6 @@
                   "enabled": true
                 }
               ]
-            },
-            {
-              "id": "service_50538",
-              "url": "http://services.arcgis.com/OLiydejKCZTGhvWg/arcgis/rest/services/Bev%C3%B6lkerungNationalit%C3%A4t1B/FeatureServer",
-              "type": "AGS_FEATURE",
-              "title": "Zensus Deutschland 2011",
-              "description": "Bevölkerung nach Geschlecht, Staatsangehörigkeit (Deutsche/Ausländer) und Alter (5 Altersklassen) für Gemeinden, Kreise und Länder, Ergebnisse des Zensus am 9. Mai 2011",
-              "layers": [
-                {
-                  "id": "0",
-                  "title": "Zensus 2011 Bundesländer",
-                  "enabled": true
-                },
-                {
-                  "id": "1",
-                  "title": "Zensus 2011 Kreise",
-                  "enabled": true
-                },
-                {
-                  "id": "2",
-                  "title": "Zensus 2011 Gemeinden",
-                  "enabled": true
-                }
-              ],
-              "options": {}
             }
           ]
         }
