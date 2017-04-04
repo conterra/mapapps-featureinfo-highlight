@@ -1,10 +1,10 @@
 {
   "Bundle-SymbolicName": "dn_featureinfodrawer",
-  "Bundle-Version": "1.0.0",
+  "Bundle-Version": "1.0.0-SNAPSHOT",
   "Bundle-Name": "${bundleName}",
   "Bundle-Description": "${bundleDescription}",
   "Bundle-Vendor": "con terra GmbH",
-  "Product-Name": "con terra Developer Network",
+  "Product-Name": "devnet-mapapps-featureinfo-drawer",
   "Bundle-Category": [
     "sample"
   ],
