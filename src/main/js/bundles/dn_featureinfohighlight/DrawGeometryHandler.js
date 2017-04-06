@@ -50,14 +50,15 @@ define([
             graphicsRenderer.clear();
         },
         _getSymbolForPolygon: function () {
+            var properties = this._properties;
             return new SimpleFillSymbol(
                 SimpleFillSymbol.STYLE_SOLID,
                 new SimpleLineSymbol(
                     SimpleLineSymbol.STYLE_SOLID,
-                    new Color([255, 255, 0]),
+                    new Color([0, 255, 255]),
                     3
                 ),
-                new Color([255, 255, 0, 0.1])
+                new Color([0, 255, 255, 0.1])
             );
         }
     });
