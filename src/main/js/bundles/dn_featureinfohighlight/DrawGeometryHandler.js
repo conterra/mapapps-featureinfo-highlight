@@ -17,13 +17,10 @@ define([
     "dojo/_base/declare",
     "ct/mapping/edit/GraphicsRenderer",
     "esri/Color",
-    "esri/geometry/Circle",
     "esri/geometry/Polygon",
-    "esri/symbols/Font",
-    "esri/symbols/TextSymbol",
     "esri/symbols/SimpleFillSymbol",
     "esri/symbols/SimpleLineSymbol"
-], function (declare, GraphicsRenderer, Color, Circle, Polygon, Font, TextSymbol, SimpleFillSymbol, SimpleLineSymbol) {
+], function (declare, GraphicsRenderer, Color, Polygon, SimpleFillSymbol, SimpleLineSymbol) {
     return declare([], {
         activate: function () {
             this.graphicsRenderer = GraphicsRenderer.createForGraphicsNode("featureInfoHighlightGeometry", this._mapModel);
@@ -56,7 +53,7 @@ define([
                 new SimpleLineSymbol(
                     SimpleLineSymbol.STYLE_SOLID,
                     new Color([0, 255, 255]),
-                    3
+                    5
                 ),
                 new Color([0, 255, 255, 0.1])
             );
