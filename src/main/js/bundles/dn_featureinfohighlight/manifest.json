@@ -1,10 +1,10 @@
 {
-  "Bundle-SymbolicName": "dn_featureinfodrawer",
+  "Bundle-SymbolicName": "dn_featureinfohighlight",
   "Bundle-Version": "1.0.1-SNAPSHOT",
   "Bundle-Name": "${bundleName}",
   "Bundle-Description": "${bundleDescription}",
   "Bundle-Vendor": "con terra GmbH",
-  "Product-Name": "devnet-mapapps-featureinfo-drawer",
+  "Product-Name": "devnet-mapapps-featureinfo-highlight",
   "Bundle-Category": [
     "sample"
   ],
@@ -26,7 +26,7 @@
   ],
   "Components": [
     {
-      "name": "FeatureInfoDrawer",
+      "name": "FeatureInfoHighlighter",
       "propertiesConstructor": true,
       "properties": {
       },
@@ -87,7 +87,7 @@
           {
             "matches": {
               "context": {
-                "mapModelNodeId": "featureInfoDrawerGeometry"
+                "mapModelNodeId": "featureInfoHighlightGeometry"
               }
             },
             "skip": true

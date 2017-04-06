@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-define({
-    root: {
-        bundleName: "FeatureInfo Drawer",
-        bundleDescription: "This bundle highlights polygon features which where selected by the FeatureInfo."
-    },
-    de: true
-});
+define([
+    ".",
+    "./FeatureInfoController",
+    "./FeatureInfoWidget",
+    "./FeatureInfoHighlighter",
+    "./DrawGeometryHandler"
+], {});

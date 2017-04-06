@@ -19,7 +19,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>de.conterra.devnet</groupId>
-    <artifactId>mapapps-featureinfo-drawer</artifactId>
+    <artifactId>mapapps-featureinfo-highlight</artifactId>
     <version>1.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <!-- DISABLE repositories and pluginRepositories if inside the con terra! -->
@@ -484,9 +484,9 @@
         </plugins>
     </build>
     <scm>
-        <connection>scm:git:https://github.com/conterra/mapapps-featureinfo-drawer.git</connection>
-        <developerConnection>scm:git:https://github.com/conterra/mapapps-featureinfo-drawer.git</developerConnection>
-        <url>https://github.com/conterra/mapapps-featureinfo-drawer</url>
+        <connection>scm:git:https://github.com/conterra/mapapps-featureinfo-highlight.git</connection>
+        <developerConnection>scm:git:https://github.com/conterra/mapapps-featureinfo-highlight.git</developerConnection>
+        <url>https://github.com/conterra/mapapps-featureinfo-highlight</url>
         <tag>HEAD</tag>
   </scm>
     <distributionManagement>

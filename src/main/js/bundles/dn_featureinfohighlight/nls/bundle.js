@@ -14,6 +14,9 @@
  * limitations under the License.
  */
 define({
-    bundleName: "FeatureInfo Drawer",
-    bundleDescription: "Dieses Bundle hebt Polygon-Features hervor, die mit Hilfe des FeatureInfo Bundles selektiert worden sind."
+    root: {
+        bundleName: "FeatureInfo Highlight",
+        bundleDescription: "This bundle highlights polygon features which where selected by the FeatureInfo."
+    },
+    de: true
 });

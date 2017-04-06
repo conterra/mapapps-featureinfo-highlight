@@ -1,6 +1,6 @@
 {
   "properties": {
-    "title": "FeatureInfo Drawer Sample",
+    "title": "FeatureInfo Highlight Sample",
     "amdPackages": "apprt@^3.4.0"
   },
   "load": {
@@ -22,7 +22,7 @@
       "console@^3.4.0",
       "featureinfo@^3.4.0",
       "banner@^3.4.0",
-      "dn_featureinfodrawer"
+      "dn_featureinfohighlight"
     ],
     "skipBundles": []
   },

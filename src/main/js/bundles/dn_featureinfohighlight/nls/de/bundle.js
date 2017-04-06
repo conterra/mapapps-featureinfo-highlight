@@ -13,10 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-define([
-    ".",
-    "./FeatureInfoController",
-    "./FeatureInfoWidget",
-    "./FeatureInfoDrawer",
-    "./DrawGeometryHandler"
-], {});
+define({
+    bundleName: "FeatureInfo Highlight",
+    bundleDescription: "Dieses Bundle hebt Polygon-Features hervor, die mit Hilfe des FeatureInfo Bundles selektiert worden sind."
+});
