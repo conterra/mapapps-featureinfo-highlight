@@ -53,7 +53,7 @@ define([
                 new SimpleLineSymbol(
                     SimpleLineSymbol.STYLE_SOLID,
                     new Color([0, 255, 255]),
-                    5
+                    3
                 ),
                 new Color([0, 255, 255, 0.1])
             );

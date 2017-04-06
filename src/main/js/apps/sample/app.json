@@ -27,6 +27,8 @@
     "skipBundles": []
   },
   "bundles": {
+    "dn_featureinfohighlight": {
+    },
     "banner": {
       "BannerWidget": {
         "label": "Developer Network",
@@ -35,39 +37,61 @@
         "link": "http://developernetwork.conterra.de"
       }
     },
-    "mapflow": {
-      "MapFlow": {
-        "nodeDepth": 5,
-        "showScrollBar": true,
-        "singleSelectionMode": false,
-        "autoZoomTo": false,
-        "autoFlipActiveCover": true,
-        "autoActivate": false,
-        "contentFlowProperties": {
-          "useAddOns": false,
-          "circularFlow": true,
-          "reflectionHeight": 0,
-          "maxItemHeight": 200,
-          "relativeItemPosition": "top center",
-          "visibleItems": 4
-        }
-      }
-    },
-    "templates": {
-      "TemplateSelector": {
-        "componentEnabled": false
-      },
-      "TemplateModel": {
-        "_selectedTemplate": "seasons"
+    "contentviewer": {
+      "ContentRegistration": {
+        "contentRules": [
+          {
+            "info": {
+              "valueNotFoundString": "-",
+              "type": "Grid",
+              "dataViewOptions": {
+                "showPager": false,
+                "showFilter": false,
+                "showViewButtons": false,
+                "itemsPerPage": 100,
+                "DGRID": {
+                  "checkboxSelection": false
+                }
+              },
+              "title": "{G_NAME}",
+              "showDetailsButton": false,
+              "allowedProperties": [
+                "V_LFD",
+                "V_DAT",
+                "KGS8",
+                "G_NAME",
+                "Land",
+                "Kreisschluessel",
+                "RegBez",
+                "Flaechentext",
+                "MaxSimpTol",
+                "MinSimpTol"
+              ],
+              "skipProperties": []
+            },
+            "windowSize": {
+              "w": 500,
+              "h": 300
+            },
+            "matches": {
+              "context": {
+                "mapModelNodeId": "gemeinden_1491484036223/0"
+              }
+            },
+            "title": "Gemeinden in Deutschland: Gemeinden",
+            "onlyShowDetail": false,
+            "type": "Grid"
+          }
+        ]
       }
     },
     "map": {
       "MapState": {
         "initialExtent": {
-          "xmin": 155564.44551162992,
-          "xmax": 2112352.369611622,
-          "ymin": 6430574.811314062,
-          "ymax": 7336812.21866287,
+          "xmin": 555482.9774996154,
+          "xmax": 1142519.3547294862,
+          "ymin": 6643479.847875436,
+          "ymax": 6925073.860077889,
           "wkid": 3857
         }
       },
@@ -79,13 +103,49 @@
               "glass_pane": [],
               "operationalLayer": [
                 {
-                  "id": "natura2000",
-                  "title": "Natura 2000",
+                  "title": "Gemeinden in Deutschland",
                   "enabled": true,
-                  "service": "natura000",
+                  "service": "gemeinden",
+                  "category": {
+                    "title": "Gemeinden in Deutschland",
+                    "description": "",
+                    "imgUrl": ""
+                  },
                   "layers": [
                     "*"
-                  ]
+                  ],
+                  "id": "gemeinden_1491484036223",
+                  "opacity": 0.2
+                },
+                {
+                  "title": "Kreise in Deutschland",
+                  "enabled": true,
+                  "service": "kreise",
+                  "category": {
+                    "title": "Kreise in Deutschland",
+                    "description": "",
+                    "imgUrl": ""
+                  },
+                  "layers": [
+                    "*"
+                  ],
+                  "id": "kreise_1491484037564",
+                  "opacity": 0.5
+                },
+                {
+                  "title": "Bundesl\u00e4nder in Deutschland",
+                  "enabled": true,
+                  "service": "bundeslaender",
+                  "category": {
+                    "title": "Bundesl\u00e4nder in Deutschland",
+                    "description": "",
+                    "imgUrl": ""
+                  },
+                  "layers": [
+                    "*"
+                  ],
+                  "id": "bundeslaender_1491484038707",
+                  "opacity": 1
                 }
               ],
               "baseLayer": [
@@ -128,75 +188,78 @@
               "url": "http://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Dark_Gray_Base/MapServer"
             },
             {
-              "id": "natura000",
-              "url": "http://discomap.eea.europa.eu/arcgis/rest/services/Bio/Natura2000_Dyna_WM/MapServer",
+              "id": "gemeinden",
+              "url": "https://services.conterra.de/arcgis/rest/services/common/gemeinden_deutschland/MapServer",
               "type": "AGS_DYNAMIC",
-              "title": "Natura 2000 Protected Areas",
-              "description": "Natura 2000 is the key instrument to protect biodiversity in the European Union. It is an ecological network of protected areas, set up to ensure the survival of Europe's most valuable species and habitats. Natura 2000 is based on the 1979 Birds Directive and the 1992 Habitats Directive. The green infrastructure it provides safeguards numerous ecosystem services and ensures that Europe's natural systems remain healthy and resilient.",
+              "title": "Gemeinden in Deutschland",
+              "description": "",
               "layers": [
                 {
                   "id": "0",
-                  "title": "Query Sites",
-                  "enabled": false
-                },
-                {
-                  "id": "1",
-                  "title": "Habitats Directive Sites (SCI)",
-                  "enabled": true
-                },
-                {
-                  "id": "2",
-                  "title": "Habitats Directive Sites (SCI)",
-                  "parentId": "1",
-                  "maxScale": 10000000,
-                  "enabled": true
-                },
-                {
-                  "id": "3",
-                  "title": "Habitats Directive Sites (SCI)",
-                  "parentId": "1",
-                  "maxScale": 300000,
-                  "minScale": 9999999,
-                  "enabled": true
-                },
-                {
-                  "id": "4",
-                  "title": "Habitats Directive Sites (SCI)",
-                  "parentId": "1",
-                  "minScale": 299999,
-                  "enabled": true
-                },
-                {
-                  "id": "5",
-                  "title": "Bird Directive Sites (SPA)",
-                  "enabled": true
-                },
-                {
-                  "id": "6",
-                  "title": "Bird Directive Sites (SPA)",
-                  "parentId": "5",
-                  "maxScale": 10000000,
-                  "enabled": true
-                },
-                {
-                  "id": "7",
-                  "title": "Bird Directive Sites (SPA)",
-                  "parentId": "5",
-                  "maxScale": 300000,
-                  "minScale": 9999999,
-                  "enabled": true
-                },
-                {
-                  "id": "8",
-                  "title": "Bird Directive Sites (SPA)",
-                  "parentId": "5",
-                  "minScale": 299999,
+                  "title": "Gemeinden",
                   "enabled": true
                 }
-              ]
+              ],
+              "options": {}
+            },
+            {
+              "id": "kreise",
+              "url": "https://services.conterra.de/arcgis/rest/services/common/kreise/MapServer",
+              "type": "AGS_DYNAMIC",
+              "title": "Kreise in Deutschland",
+              "description": "",
+              "layers": [
+                {
+                  "id": "0",
+                  "title": "Kreise",
+                  "enabled": true
+                }
+              ],
+              "options": {}
+            },
+            {
+              "id": "bundeslaender",
+              "url": "https://services.conterra.de/arcgis/rest/services/common/laender/MapServer",
+              "type": "AGS_DYNAMIC",
+              "title": "Bundesl\u00e4nder in Deutschland",
+              "description": "",
+              "layers": [
+                {
+                  "id": "0",
+                  "title": "Bundesl\u00e4nder",
+                  "enabled": true
+                }
+              ],
+              "options": {}
             }
           ]
         }
+      }
+    },
+    "mapflow": {
+      "MapFlow": {
+        "nodeDepth": 5,
+        "showScrollBar": true,
+        "singleSelectionMode": false,
+        "autoZoomTo": false,
+        "autoFlipActiveCover": true,
+        "autoActivate": false,
+        "contentFlowProperties": {
+          "useAddOns": false,
+          "circularFlow": true,
+          "reflectionHeight": 0,
+          "maxItemHeight": 200,
+          "relativeItemPosition": "top center",
+          "visibleItems": 4
+        }
+      }
+    },
+    "templates": {
+      "TemplateSelector": {
+        "componentEnabled": false
+      },
+      "TemplateModel": {
+        "_selectedTemplate": "seasons"
       }
     }
   }
