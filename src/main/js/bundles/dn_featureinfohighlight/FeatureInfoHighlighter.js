@@ -25,13 +25,13 @@ define([
         activate: function () {
             this.connect(FeatureInfoWidget.prototype, "_resolveFeatureContent", function (feature) {
                 this._drawGeometryHandler.clearGraphics();
-                if (feature.trueGeometry.type === "polygon") {
+                if (feature.trueGeometry && feature.trueGeometry.type === "polygon") {
                     this._drawGeometryHandler.drawGeometry(feature.trueGeometry);
                 }
             }, this);
             /*this.connect(this._contentViewer, "showContentInfo", function (content, context, hints) {
              this._drawGeometryHandler.clearGraphics();
-             if (content.geometry.type === "polygon") {
+             if (content.geometry && content.geometry.type === "polygon") {
              if (this.infoWindow)
              this.infoWindow.window.hide();
              this._drawGeometryHandler.drawGeometry(content.geometry);
@@ -39,7 +39,7 @@ define([
              }, this);*/
             this.connect(this._contentViewer, "_displayWindow", function (widget, geometry, rule) {
                 this._drawGeometryHandler.clearGraphics();
-                if (geometry.type === "polygon") {
+                if (geometry && geometry.type === "polygon") {
                     this._drawGeometryHandler.drawGeometry(geometry);
                 }
             }, this);
