@@ -22,6 +22,7 @@
       "console@^3.4.0",
       "featureinfo@^3.4.0",
       "banner@^3.4.0",
+      "custominfo@^3.4.0",
       "dn_featureinfohighlight"
     ],
     "skipBundles": []
@@ -36,6 +37,36 @@
         "imagePosition": "above",
         "link": "http://developernetwork.conterra.de"
       }
+    },
+    "custominfo": {
+      "CustomInfoToggleTool": [
+        {
+          "id": "customInfoTool",
+          "activateOnStartup": true,
+          "title": "Information",
+          "tooltip": "Information",
+          "iconClass": "icon-custom-info-info",
+          "toolClass": "ctInfo",
+          "togglable": true,
+          "widgetSettings": {
+            "title": "Information",
+            "content": "This app shows the functionality of the FeatureInfo Highlight bundle. This bundle highlights polygon features which where automatically queried by the FeatureInfo bundle when clicking on it.<br><br>Please click on the map to highlight a feature and show its related information.",
+            "window": {
+              "marginBox": {
+                "w": 300,
+                "h": 150,
+                "l": 25,
+                "b": 70
+              },
+              "draggable": true,
+              "closable": true,
+              "modal": false,
+              "maximizable": false,
+              "resizable": false
+            }
+          }
+        }
+      ]
     },
     "contentviewer": {
       "ContentRegistration": {
