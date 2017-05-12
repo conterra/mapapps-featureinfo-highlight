@@ -7,7 +7,7 @@ http://www.mapapps.de/mapapps/resources/apps/downloads_featureinfo_highlight/ind
 
 Installation Guide
 ------------------
-Add the bundle "dn_featureinfohighlight" to your app.
+In order to use the "dn_featureinfohighlight" bundle, simply add it to your app - no further configuration is required.
 
 Development Guide
 ------------------
