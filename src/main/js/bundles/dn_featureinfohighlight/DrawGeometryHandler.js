@@ -36,8 +36,13 @@ define([
             var feature = {
                 geometry: geometry
             };
-            if (geometry.type === "polygon" || geometry.type === "extent") {
-                feature.symbol = this._getSymbolForPolygon();
+            switch (geometry.type) {
+                case "polygon":
+                    feature.symbol = this._getSymbolForPolygon();
+                    break;
+                case "extent":
+                    feature.symbol = this._getSymbolForPolygon();
+                    break;
             }
             graphicsRenderer.draw(feature);
             return feature;
@@ -47,7 +52,6 @@ define([
             graphicsRenderer.clear();
         },
         _getSymbolForPolygon: function () {
-            var properties = this._properties;
             return new SimpleFillSymbol(
                 SimpleFillSymbol.STYLE_SOLID,
                 new SimpleLineSymbol(
