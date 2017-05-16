@@ -18,9 +18,10 @@ define([
     "ct/mapping/edit/GraphicsRenderer",
     "esri/Color",
     "esri/geometry/Polygon",
+    "esri/symbols/SimpleMarkerSymbol",
     "esri/symbols/SimpleFillSymbol",
     "esri/symbols/SimpleLineSymbol"
-], function (declare, GraphicsRenderer, Color, Polygon, SimpleFillSymbol, SimpleLineSymbol) {
+], function (declare, GraphicsRenderer, Color, Polygon, SimpleMarkerSymbol, SimpleFillSymbol, SimpleLineSymbol) {
     return declare([], {
         activate: function () {
             this.graphicsRenderer = GraphicsRenderer.createForGraphicsNode("featureInfoHighlightGeometry", this._mapModel);
@@ -38,10 +39,12 @@ define([
             };
             switch (geometry.type) {
                 case "polygon":
-                    feature.symbol = this._getSymbolForPolygon();
-                    break;
                 case "extent":
                     feature.symbol = this._getSymbolForPolygon();
+                    break;
+                case "point":
+                case "multipoint":
+                    feature.symbol = this._getSymbolForPoint();
                     break;
             }
             graphicsRenderer.draw(feature);
@@ -54,6 +57,16 @@ define([
         _getSymbolForPolygon: function () {
             return new SimpleFillSymbol(
                 SimpleFillSymbol.STYLE_SOLID,
+                new SimpleLineSymbol(
+                    SimpleLineSymbol.STYLE_SOLID,
+                    new Color([0, 255, 255]),
+                    3
+                ),
+                new Color([0, 255, 255, 0.1])
+            );
+        },
+        _getSymbolForPoint: function () {
+            return SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, 10,
                 new SimpleLineSymbol(
                     SimpleLineSymbol.STYLE_SOLID,
                     new Color([0, 255, 255]),

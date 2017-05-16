@@ -26,13 +26,13 @@ define([
             this.connect(FeatureInfoWidget.prototype, "_resolveFeatureContent", function (feature) {
                 this._drawGeometryHandler.clearGraphics();
                 var geometry = feature.trueGeometry;
-                if (geometry && geometry.type === "polygon") {
+                if (geometry && (geometry.type === "polygon" || geometry.type === "multipoint")) {
                     this._drawGeometryHandler.drawGeometry(geometry);
                 }
             }, this);
             this.connect(this._contentViewer, "_displayWindow", function (widget, geometry, rule) {
                 this._drawGeometryHandler.clearGraphics();
-                if (geometry && geometry.type === "polygon") {
+                if (geometry && (geometry.type === "polygon" || geometry.type === "multipoint")) {
                     this._drawGeometryHandler.drawGeometry(geometry);
                 }
             }, this);
