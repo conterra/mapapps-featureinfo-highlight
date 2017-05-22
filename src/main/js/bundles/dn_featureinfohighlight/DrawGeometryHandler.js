@@ -15,13 +15,17 @@
  */
 define([
     "dojo/_base/declare",
+
     "ct/mapping/edit/GraphicsRenderer",
+
     "esri/Color",
     "esri/geometry/Polygon",
     "esri/symbols/SimpleMarkerSymbol",
     "esri/symbols/SimpleFillSymbol",
     "esri/symbols/SimpleLineSymbol"
-], function (declare, GraphicsRenderer, Color, Polygon, SimpleMarkerSymbol, SimpleFillSymbol, SimpleLineSymbol) {
+], function (declare,
+             GraphicsRenderer,
+             Color, Polygon, SimpleMarkerSymbol, SimpleFillSymbol, SimpleLineSymbol) {
     return declare([], {
         activate: function () {
             this.graphicsRenderer = GraphicsRenderer.createForGraphicsNode("featureInfoHighlightGeometry", this._mapModel);

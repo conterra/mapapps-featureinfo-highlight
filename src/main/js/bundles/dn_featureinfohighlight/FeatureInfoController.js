@@ -17,10 +17,14 @@ define([
     "dojo/_base/declare",
     "dojo/_base/array",
     "dojo/_base/lang",
+
     "ct/_lang",
     "ct/_when",
+
     "featureinfo/FeatureInfoController"
-], function (declare, d_array, d_lang, ct_lang, ct_when, FeatureInfoController) {
+], function (declare, d_array, d_lang,
+             ct_lang, ct_when,
+             FeatureInfoController) {
     return declare([], {
         activate: function () {
             this.inherited(arguments);

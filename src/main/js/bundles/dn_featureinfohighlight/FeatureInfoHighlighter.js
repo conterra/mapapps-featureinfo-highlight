@@ -15,12 +15,9 @@
  */
 define([
     "dojo/_base/declare",
-    "dojo/_base/array",
-    "dojo/_base/lang",
-    "dojo/aspect",
     "ct/_Connect",
     "featureinfo/FeatureInfoWidget"
-], function (declare, d_array, d_lang, d_aspect, _Connect, FeatureInfoWidget) {
+], function (declare, _Connect, FeatureInfoWidget) {
     return declare([_Connect], {
         activate: function () {
             this.connect(FeatureInfoWidget.prototype, "_resolveFeatureContent", function (feature) {

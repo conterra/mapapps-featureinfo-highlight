@@ -27,7 +27,6 @@
   "Components": [
     {
       "name": "FeatureInfoHighlighter",
-      "propertiesConstructor": true,
       "properties": {
       },
       "references": [
@@ -47,7 +46,6 @@
     },
     {
       "name": "FeatureInfoController",
-      "propertiesConstructor": true,
       "properties": {
       },
       "provides": [
@@ -57,7 +55,6 @@
     },
     {
       "name": "FeatureInfoWidget",
-      "propertiesConstructor": true,
       "properties": {
       },
       "provides": [
