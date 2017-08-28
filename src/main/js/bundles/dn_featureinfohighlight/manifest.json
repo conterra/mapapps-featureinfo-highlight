@@ -65,6 +65,9 @@
     {
       "name": "DrawGeometryHandler",
       "provides": "dn_featureinfoselector.DrawGeometryHandler",
+      "properties": {
+        "pointSymbolSize": 10
+      },
       "references": [
         {
           "name": "_mapModel",

@@ -8,27 +8,31 @@
       "localbundles",
       "bundles"
     ],
+    "skipBundles": [],
     "allowedBundles": [
       "system@^3.4.0",
       "splashscreen@^3.4.0",
       "map@^3.4.0",
+      "mapflow@^3.4.0",
       "themes@^3.4.0",
       "templates@^3.4.0",
       "templatelayout@^3.4.0",
       "windowmanager@^3.4.0",
+      "notifier@^3.4.0",
       "toolset@^3.4.0",
       "toolrules@^3.4.0",
-      "basemaptoggler@^3.4.0",
       "console@^3.4.0",
       "featureinfo@^3.4.0",
       "banner@^3.4.0",
       "custominfo@^3.4.0",
       "dn_featureinfohighlight"
-    ],
-    "skipBundles": []
+    ]
   },
   "bundles": {
     "dn_featureinfohighlight": {
+      "DrawGeometryHandler": {
+        "pointSymbolSize": 15
+      }
     },
     "banner": {
       "BannerWidget": {
@@ -106,7 +110,7 @@
             },
             "matches": {
               "context": {
-                "mapModelNodeId": "gemeinden_1491484036223/0"
+                "mapModelNodeId": "service_40288_1491484036223/0"
               }
             },
             "title": "Gemeinden in Deutschland: Gemeinden",
@@ -117,6 +121,70 @@
       }
     },
     "map": {
+      "MapModelFactory": {
+        "_configData": {
+          "maps": [
+            {
+              "id": "default",
+              "glass_pane": [],
+              "operationalLayer": [
+                {
+                  "title": "Grenzen in Deutschland",
+                  "enabled": true,
+                  "service": "service_40288",
+                  "category": {
+                    "title": "Gemeinden in Deutschland",
+                    "description": "",
+                    "imgUrl": ""
+                  },
+                  "children": [
+                    {
+                      "layer": "0",
+                      "enabled": true,
+                      "opacity": 0.2
+                    },
+                    {
+                      "layer": "1",
+                      "enabled": true,
+                      "opacity": 0.5
+                    },
+                    {
+                      "layer": "2",
+                      "enabled": true,
+                      "opacity": 1.0
+                    }
+                  ],
+                  "id": "service_40288_1491484036223",
+                  "opacity": 0.2
+                },
+                {
+                  "title": "Standorte",
+                  "enabled": true,
+                  "service": "service_68737",
+                  "category": {
+                    "title": "service_68737",
+                    "description": "Standorte der Esri Deutschland Group",
+                    "imgUrl": ""
+                  },
+                  "layers": [
+                    "*"
+                  ],
+                  "id": "service_68737_1503917294170",
+                  "options": {}
+                }
+              ],
+              "baseLayer": [
+                {
+                  "title": "Dark Canvas",
+                  "service": "darkcanvas",
+                  "enabled": true,
+                  "id": "darkcanvas_1491483964790"
+                }
+              ]
+            }
+          ]
+        }
+      },
       "MapState": {
         "initialExtent": {
           "xmin": 555482.9774996154,
@@ -126,138 +194,54 @@
           "wkid": 3857
         }
       },
-      "MapModelFactory": {
-        "_configData": {
-          "maps": [
-            {
-              "id": "default",
-              "glass_pane": [],
-              "operationalLayer": [
-                {
-                  "title": "Gemeinden in Deutschland",
-                  "enabled": true,
-                  "service": "gemeinden",
-                  "category": {
-                    "title": "Gemeinden in Deutschland",
-                    "description": "",
-                    "imgUrl": ""
-                  },
-                  "layers": [
-                    "*"
-                  ],
-                  "id": "gemeinden_1491484036223",
-                  "opacity": 0.2
-                },
-                {
-                  "title": "Kreise in Deutschland",
-                  "enabled": true,
-                  "service": "kreise",
-                  "category": {
-                    "title": "Kreise in Deutschland",
-                    "description": "",
-                    "imgUrl": ""
-                  },
-                  "layers": [
-                    "*"
-                  ],
-                  "id": "kreise_1491484037564",
-                  "opacity": 0.5
-                },
-                {
-                  "title": "Bundesl\u00e4nder in Deutschland",
-                  "enabled": true,
-                  "service": "bundeslaender",
-                  "category": {
-                    "title": "Bundesl\u00e4nder in Deutschland",
-                    "description": "",
-                    "imgUrl": ""
-                  },
-                  "layers": [
-                    "*"
-                  ],
-                  "id": "bundeslaender_1491484038707",
-                  "opacity": 1
-                }
-              ],
-              "baseLayer": [
-                {
-                  "title": "Streets",
-                  "service": "streets",
-                  "enabled": false
-                },
-                {
-                  "title": "Topo",
-                  "service": "worldTopo",
-                  "enabled": false
-                },
-                {
-                  "title": "Dark Canvas",
-                  "service": "darkcanvas",
-                  "enabled": true
-                }
-              ]
-            }
-          ]
-        }
-      },
       "MappingResourceRegistryFactory": {
         "_knownServices": {
           "services": [
             {
-              "id": "worldTopo",
-              "type": "AGS_TILED",
-              "url": "http://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer"
-            },
-            {
-              "id": "streets",
-              "type": "AGS_TILED",
-              "url": "http://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer"
-            },
-            {
               "id": "darkcanvas",
               "type": "AGS_TILED",
-              "url": "http://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Dark_Gray_Base/MapServer"
+              "url": "https://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Dark_Gray_Base/MapServer"
             },
             {
-              "id": "gemeinden",
-              "url": "https://services.conterra.de/arcgis/rest/services/common/gemeinden_deutschland/MapServer",
+              "id": "service_40288",
+              "url": "https://services.conterra.de/arcgis/rest/services/common/grenzen/MapServer",
               "type": "AGS_DYNAMIC",
-              "title": "Gemeinden in Deutschland",
+              "title": "",
               "description": "",
               "layers": [
                 {
                   "id": "0",
                   "title": "Gemeinden",
                   "enabled": true
-                }
-              ],
-              "options": {}
-            },
-            {
-              "id": "kreise",
-              "url": "https://services.conterra.de/arcgis/rest/services/common/kreise/MapServer",
-              "type": "AGS_DYNAMIC",
-              "title": "Kreise in Deutschland",
-              "description": "",
-              "layers": [
+                },
                 {
-                  "id": "0",
+                  "id": "1",
                   "title": "Kreise",
+                  "enabled": true
+                },
+                {
+                  "id": "2",
+                  "title": "Bundeslaender",
+                  "enabled": true
+                },
+                {
+                  "id": "3",
+                  "title": "World",
                   "enabled": true
                 }
               ],
               "options": {}
             },
             {
-              "id": "bundeslaender",
-              "url": "https://services.conterra.de/arcgis/rest/services/common/laender/MapServer",
-              "type": "AGS_DYNAMIC",
-              "title": "Bundesl\u00e4nder in Deutschland",
-              "description": "",
+              "id": "service_68737",
+              "url": "https://services.conterra.de/arcgis/rest/services/common/standorte/FeatureServer",
+              "type": "AGS_FEATURE",
+              "title": "",
+              "description": "Standorte der Esri Deutschland Group",
               "layers": [
                 {
                   "id": "0",
-                  "title": "Bundesl\u00e4nder",
+                  "title": "Standorte",
                   "enabled": true
                 }
               ],
@@ -286,11 +270,16 @@
       }
     },
     "templates": {
-      "TemplateSelector": {
-        "componentEnabled": false
-      },
       "TemplateModel": {
         "_selectedTemplate": "seasons"
+      },
+      "TemplateSelector": {
+        "componentEnabled": false
+      }
+    },
+    "toolset": {
+      "ToolsetManager": {
+        "toolsets": []
       }
     }
   }

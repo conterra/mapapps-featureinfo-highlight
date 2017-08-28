@@ -70,7 +70,7 @@ define([
             );
         },
         _getSymbolForPoint: function () {
-            return SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, 10,
+            return SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, this._properties.pointSymbolSize || 20,
                 new SimpleLineSymbol(
                     SimpleLineSymbol.STYLE_SOLID,
                     new Color([0, 255, 255]),
