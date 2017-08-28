@@ -72,54 +72,6 @@
         }
       ]
     },
-    "contentviewer": {
-      "ContentRegistration": {
-        "contentRules": [
-          {
-            "info": {
-              "valueNotFoundString": "-",
-              "type": "Grid",
-              "dataViewOptions": {
-                "showPager": false,
-                "showFilter": false,
-                "showViewButtons": false,
-                "itemsPerPage": 100,
-                "DGRID": {
-                  "checkboxSelection": false
-                }
-              },
-              "title": "{G_NAME}",
-              "showDetailsButton": false,
-              "allowedProperties": [
-                "V_LFD",
-                "V_DAT",
-                "KGS8",
-                "G_NAME",
-                "Land",
-                "Kreisschluessel",
-                "RegBez",
-                "Flaechentext",
-                "MaxSimpTol",
-                "MinSimpTol"
-              ],
-              "skipProperties": []
-            },
-            "windowSize": {
-              "w": 500,
-              "h": 300
-            },
-            "matches": {
-              "context": {
-                "mapModelNodeId": "service_40288_1491484036223/0"
-              }
-            },
-            "title": "Gemeinden in Deutschland: Gemeinden",
-            "onlyShowDetail": false,
-            "type": "Grid"
-          }
-        ]
-      }
-    },
     "map": {
       "MapModelFactory": {
         "_configData": {
@@ -151,7 +103,7 @@
                     {
                       "layer": "2",
                       "enabled": true,
-                      "opacity": 1.0
+                      "opacity": 1
                     }
                   ],
                   "id": "service_40288_1491484036223",
