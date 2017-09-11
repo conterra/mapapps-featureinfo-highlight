@@ -50,6 +50,9 @@ define([
                 case "multipoint":
                     feature.symbol = this._getSymbolForPoint();
                     break;
+                case "polyline":
+                    feature.symbol = this._getSymbolForPolyline();
+                    break;
             }
             graphicsRenderer.draw(feature);
             return feature;
@@ -77,6 +80,13 @@ define([
                     3
                 ),
                 new Color([0, 255, 255, 0.1])
+            );
+        },
+        _getSymbolForPolyline: function () {
+            return SimpleLineSymbol(
+                SimpleLineSymbol.STYLE_SOLID,
+                new Color([0, 255, 255]),
+                3
             );
         }
     });

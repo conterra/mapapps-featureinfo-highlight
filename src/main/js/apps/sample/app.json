@@ -81,6 +81,79 @@
               "glass_pane": [],
               "operationalLayer": [
                 {
+                  "title": "Standorte",
+                  "enabled": true,
+                  "service": "service_68737",
+                  "category": {
+                    "title": "service_68737",
+                    "description": "Standorte der Esri Deutschland Group",
+                    "imgUrl": ""
+                  },
+                  "layers": [
+                    "*"
+                  ],
+                  "id": "service_68737_1503917294170",
+                  "options": {}
+                },
+                {
+                  "title": "service_81746",
+                  "enabled": true,
+                  "service": "service_81746",
+                  "category": {
+                    "title": "service_81746",
+                    "description": "Flughäfen in Deutschland (aus Open Street Map)",
+                    "imgUrl": ""
+                  },
+                  "children": [
+                    {
+                      "layer": "0",
+                      "enabled": false
+                    },
+                    {
+                      "layer": "1",
+                      "enabled": false
+                    },
+                    {
+                      "layer": "2",
+                      "enabled": false
+                    },
+                    {
+                      "layer": "3",
+                      "enabled": false
+                    },
+                    {
+                      "layer": "4",
+                      "enabled": true
+                    },
+                    {
+                      "layer": "5",
+                      "enabled": false
+                    },
+                    {
+                      "layer": "6",
+                      "enabled": true
+                    },
+                    {
+                      "layer": "7",
+                      "enabled": false
+                    },
+                    {
+                      "layer": "8",
+                      "enabled": false
+                    },
+                    {
+                      "layer": "9",
+                      "enabled": false
+                    },
+                    {
+                      "layer": "10",
+                      "enabled": false
+                    }
+                  ],
+                  "id": "service_81746_1505152791063",
+                  "opacity": 1
+                },
+                {
                   "title": "Grenzen in Deutschland",
                   "enabled": true,
                   "service": "service_40288",
@@ -108,21 +181,6 @@
                   ],
                   "id": "service_40288_1491484036223",
                   "opacity": 0.2
-                },
-                {
-                  "title": "Standorte",
-                  "enabled": true,
-                  "service": "service_68737",
-                  "category": {
-                    "title": "service_68737",
-                    "description": "Standorte der Esri Deutschland Group",
-                    "imgUrl": ""
-                  },
-                  "layers": [
-                    "*"
-                  ],
-                  "id": "service_68737_1503917294170",
-                  "options": {}
                 }
               ],
               "baseLayer": [
@@ -153,6 +211,82 @@
               "id": "darkcanvas",
               "type": "AGS_TILED",
               "url": "https://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Dark_Gray_Base/MapServer"
+            },
+            {
+              "id": "service_81746",
+              "url": "https://services.conterra.de/arcgis/rest/services/mapapps/airtraffic/MapServer",
+              "type": "AGS_DYNAMIC",
+              "title": "",
+              "description": "Flughäfen in Deutschland (aus Open Street Map)",
+              "layers": [
+                {
+                  "id": "0",
+                  "title": "aerodrome2",
+                  "maxScale": 50000,
+                  "enabled": true
+                },
+                {
+                  "id": "1",
+                  "title": "aerodrome1",
+                  "maxScale": 50000,
+                  "enabled": true
+                },
+                {
+                  "id": "2",
+                  "title": "terminal",
+                  "minScale": 24000,
+                  "enabled": true
+                },
+                {
+                  "id": "3",
+                  "title": "Helipad",
+                  "minScale": 50000,
+                  "enabled": true
+                },
+                {
+                  "id": "4",
+                  "title": "runway",
+                  "minScale": 500000,
+                  "enabled": true
+                },
+                {
+                  "id": "5",
+                  "title": "taxiway",
+                  "minScale": 200000,
+                  "enabled": true
+                },
+                {
+                  "id": "6",
+                  "title": "runway",
+                  "minScale": 500000,
+                  "enabled": true
+                },
+                {
+                  "id": "7",
+                  "title": "taxiway",
+                  "minScale": 200000,
+                  "enabled": true
+                },
+                {
+                  "id": "8",
+                  "title": "terminal",
+                  "minScale": 2000000,
+                  "enabled": true
+                },
+                {
+                  "id": "9",
+                  "title": "apron",
+                  "minScale": 2000000,
+                  "enabled": true
+                },
+                {
+                  "id": "10",
+                  "title": "aerodrome",
+                  "minScale": 2000000,
+                  "enabled": true
+                }
+              ],
+              "options": {}
             },
             {
               "id": "service_40288",
