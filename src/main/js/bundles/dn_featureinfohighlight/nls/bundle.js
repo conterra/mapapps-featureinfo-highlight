@@ -16,7 +16,7 @@
 define({
     root: {
         bundleName: "FeatureInfo Highlight",
-        bundleDescription: "This bundle highlights polygon features which where selected by the FeatureInfo."
+        bundleDescription: "This bundle highlights features which where selected by the FeatureInfo."
     },
     de: true
 });

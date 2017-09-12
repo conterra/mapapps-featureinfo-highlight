@@ -15,5 +15,5 @@
  */
 define({
     bundleName: "FeatureInfo Highlight",
-    bundleDescription: "Dieses Bundle hebt Polygon-Features hervor, die mit Hilfe des FeatureInfo Bundles selektiert worden sind."
+    bundleDescription: "Dieses Bundle hebt Features hervor, die mit Hilfe des FeatureInfo Bundles selektiert worden sind."
 });
