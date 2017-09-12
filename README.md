@@ -1,5 +1,5 @@
 # FeatureInfo Highlight
-This bundle highlights polygon features which where selected by the FeatureInfo bundle.
+This bundle highlights features which where selected by the FeatureInfo bundle.
 
 Sample App
 ------------------
