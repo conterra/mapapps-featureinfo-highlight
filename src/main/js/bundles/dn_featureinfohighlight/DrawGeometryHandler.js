@@ -73,7 +73,7 @@ define([
             );
         },
         _getSymbolForPoint: function () {
-            return SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, this._properties.pointSymbolSize || 20,
+            return new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, this._properties.pointSymbolSize || 20,
                 new SimpleLineSymbol(
                     SimpleLineSymbol.STYLE_SOLID,
                     new Color([0, 255, 255]),
@@ -83,7 +83,7 @@ define([
             );
         },
         _getSymbolForPolyline: function () {
-            return SimpleLineSymbol(
+            return new SimpleLineSymbol(
                 SimpleLineSymbol.STYLE_SOLID,
                 new Color([0, 255, 255]),
                 3
