@@ -3,7 +3,7 @@ This bundle highlights features which where selected by the FeatureInfo bundle.
 
 Sample App
 ------------------
-http://www.mapapps.de/mapapps/resources/apps/downloads_featureinfo_highlight/index.html
+https://demos.conterra.de/mapapps/resources/apps/downloads_featureinfo_highlight/index.html
 
 Installation Guide
 ------------------
