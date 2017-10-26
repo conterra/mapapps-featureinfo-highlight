@@ -5,6 +5,8 @@ Sample App
 ------------------
 https://demos.conterra.de/mapapps/resources/apps/downloads_featureinfo_highlight/index.html
 
+![Screenshot Highlight Sample App](https://github.com/conterra/mapapps-featureinfo-highlight/blob/master/highlighter.JPG)
+
 Installation Guide
 ------------------
 In order to use the "dn_featureinfohighlight" bundle, simply add it to your app - no further configuration is required.
