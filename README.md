@@ -1,6 +1,8 @@
 # FeatureInfo Highlight
 This bundle highlights features which where selected by the FeatureInfo bundle.
 
+❗️ This bundle is no longer needed for map.apps line 4 apps. When using WebGL rendering, feature highlighting is a map.apps core functionality. ❗️
+
 Sample App
 ------------------
 https://demos.conterra.de/mapapps/resources/apps/downloads_featureinfo_highlight/index.html
