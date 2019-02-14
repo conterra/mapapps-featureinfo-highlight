@@ -1,6 +1,6 @@
 {
   "name": "dn_featureinfohighlight",
-  "version": "2.0.0-SNAPSHOT",
+  "version": "2.0.0",
   "dependencies": {
     "esri": "^4.5.0"
   },
