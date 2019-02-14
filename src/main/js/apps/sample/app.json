@@ -1,372 +1,119 @@
 {
-  "properties": {
-    "title": "FeatureInfo Highlight Sample",
-    "amdPackages": "apprt@^3.4.0"
-  },
-  "load": {
-    "bundleLocations": [
-      "localbundles",
-      "bundles"
-    ],
-    "skipBundles": [],
-    "allowedBundles": [
-      "system@^3.4.0",
-      "splashscreen@^3.4.0",
-      "map@^3.4.0",
-      "mapflow@^3.4.0",
-      "themes@^3.4.0",
-      "templates@^3.4.0",
-      "templatelayout@^3.4.0",
-      "windowmanager@^3.4.0",
-      "notifier@^3.4.0",
-      "toolset@^3.4.0",
-      "toolrules@^3.4.0",
-      "console@^3.4.0",
-      "featureinfo@^3.4.0",
-      "banner@^3.4.0",
-      "custominfo@^3.4.0",
-      "dn_featureinfohighlight"
-    ]
-  },
-  "bundles": {
-    "dn_featureinfohighlight": {
-      "DrawGeometryHandler": {
-        "pointSymbolSize": 15
-      }
+    "load": {
+        "bundleLocations": [
+            "localbundles",
+            "bundles"
+        ],
+        "allowedBundles": [
+            "system@^4.5.0",
+            "splashscreen@^4.5.0",
+            "templatelayout@^4.5.0",
+            "template-seasons@^4.5.0",
+            "theme-everlasting@^4.5.0",
+            "toolset@^4.5.0",
+            "map-init@^4.5.0",
+            "banner",
+            "popups-default",
+            "popups",
+            "dn_featureinfohighlight",
+            "console"
+        ]
     },
-    "banner": {
-      "BannerWidget": {
-        "label": "Developer Network",
-        "image": "https://www.conterra.de/~/media/conterra/images/site_logos/conterra-logo.ashx",
-        "imagePosition": "above",
-        "link": "http://developernetwork.conterra.de"
-      }
-    },
-    "custominfo": {
-      "CustomInfoToggleTool": [
-        {
-          "id": "customInfoTool",
-          "activateOnStartup": true,
-          "title": "Information",
-          "tooltip": "Information",
-          "iconClass": "icon-custom-info-info",
-          "toolClass": "ctInfo",
-          "togglable": true,
-          "widgetSettings": {
-            "title": "Information",
-            "content": "This app shows the functionality of the FeatureInfo Highlight bundle. This bundle highlights polygon features which where automatically queried by the FeatureInfo bundle when clicking on it.<br><br>Please click on the map to highlight a feature and show its related information.",
-            "window": {
-              "marginBox": {
-                "w": 300,
-                "h": 150,
-                "l": 25,
-                "b": 70
-              },
-              "draggable": true,
-              "closable": true,
-              "modal": false,
-              "maximizable": false,
-              "resizable": false
+    "bundles": {
+        "banner": {
+            "BannerWidget": {
+                "label": "Developer Network",
+                "image": "https://www.conterra.de/~/media/conterra/images/site_logos/conterra-logo.ashx",
+                "imagePosition": "above",
+                "link": "http://developernetwork.conterra.de"
             }
-          }
-        }
-      ]
-    },
-    "map": {
-      "MapModelFactory": {
-        "_configData": {
-          "maps": [
-            {
-              "id": "default",
-              "glass_pane": [],
-              "operationalLayer": [
-                {
-                  "title": "Standorte",
-                  "enabled": true,
-                  "service": "service_68737",
-                  "category": {
-                    "title": "service_68737",
-                    "description": "Standorte der Esri Deutschland Group",
-                    "imgUrl": ""
-                  },
-                  "layers": [
-                    "*"
-                  ],
-                  "id": "service_68737_1503917294170",
-                  "options": {}
+        },
+        "map-init": {
+            "Config": {
+                "basemaps": [{
+                    "id": "streets",
+                    "basemap": "streets",
+                    "title": "Strassen",
+                    "selected": true
+                },{
+                    "id": "satellite",
+                    "basemap": "satellite",
+                    "title": "Satellit"
+                },{
+                    "id": "hybrid",
+                    "basemap": "hybrid",
+                    "title": "Hybrid"
+                }],
+                "map": {
+                    "layers": [
+                        {
+                            "id": "airtraffic",
+                            "type": "AGS_DYNAMIC",
+                            "url": "https://services.conterra.de/arcgis/rest/services/mapapps/airtraffic/MapServer",
+                            "sublayers": [
+                                {
+                                    "id": 0
+                                },
+                                {
+                                    "id": 1
+                                }
+                            ]
+                        },
+                        {
+                            "title": "baum",
+                            "type": "AGS_FEATURE",
+                            "url": " https://services.conterra.de/arcgis/rest/services/mapapps/Baumkataster_Zustand/FeatureServer/0"
+                        },
+                        {
+                            "title": "borders",
+                            "type": "AGS_DYNAMIC",
+                            "url": "https://services.conterra.de/arcgis/rest/services/common/grenzen/MapServer",
+                            "sublayers": [
+                                {
+                                    "id": "1"
+                                }
+                            ]
+                        }
+                    ]
                 },
-                {
-                  "title": "service_81746",
-                  "enabled": true,
-                  "service": "service_81746",
-                  "category": {
-                    "title": "service_81746",
-                    "description": "Flughäfen in Deutschland (aus Open Street Map)",
-                    "imgUrl": ""
-                  },
-                  "children": [
-                    {
-                      "layer": "0",
-                      "enabled": false
-                    },
-                    {
-                      "layer": "1",
-                      "enabled": false
-                    },
-                    {
-                      "layer": "2",
-                      "enabled": false
-                    },
-                    {
-                      "layer": "3",
-                      "enabled": false
-                    },
-                    {
-                      "layer": "4",
-                      "enabled": true
-                    },
-                    {
-                      "layer": "5",
-                      "enabled": false
-                    },
-                    {
-                      "layer": "6",
-                      "enabled": true
-                    },
-                    {
-                      "layer": "7",
-                      "enabled": false
-                    },
-                    {
-                      "layer": "8",
-                      "enabled": false
-                    },
-                    {
-                      "layer": "9",
-                      "enabled": false
-                    },
-                    {
-                      "layer": "10",
-                      "enabled": false
+
+                "view": {
+                    "viewmode": "2D",
+                    "extent": {
+                        "xmin": 600000,
+                        "ymin": 5800000,
+                        "xmax": 1700000,
+                        "ymax": 7600000,
+                        "spatialReference": 3857
                     }
-                  ],
-                  "id": "service_81746_1505152791063",
-                  "opacity": 1
-                },
-                {
-                  "title": "Grenzen in Deutschland",
-                  "enabled": true,
-                  "service": "service_40288",
-                  "category": {
-                    "title": "Gemeinden in Deutschland",
-                    "description": "",
-                    "imgUrl": ""
-                  },
-                  "children": [
+                }
+            }
+        },
+        "popups": {
+            "Config": {
+
+                "defaultPopupType": "default",
+                "defaultPopupEnabled": true,
+
+                "highlightEnabled": true
+
+            }
+        },
+        "toolset": {
+            "ToolsetManager": {
+                "toolsets": [
                     {
-                      "layer": "0",
-                      "enabled": true,
-                      "opacity": 0.2
-                    },
-                    {
-                      "layer": "1",
-                      "enabled": true,
-                      "opacity": 0.5
-                    },
-                    {
-                      "layer": "2",
-                      "enabled": true,
-                      "opacity": 1
+                        "id": "defaultToolSet",
+                        "tools": ["*"],
+                        "registerWidget": {
+                            "widgetRole": "map_topleft"
+                        },
+                        "container": "ignore",
+                        "windowType": "container",
+                        "cssClass": "muted"
                     }
-                  ],
-                  "id": "service_40288_1491484036223",
-                  "opacity": 0.2
-                }
-              ],
-              "baseLayer": [
-                {
-                  "title": "Dark Canvas",
-                  "service": "darkcanvas",
-                  "enabled": true,
-                  "id": "darkcanvas_1491483964790"
-                }
-              ]
+                ]
             }
-          ]
         }
-      },
-      "MapState": {
-        "initialExtent": {
-          "xmin": 555482.9774996154,
-          "xmax": 1142519.3547294862,
-          "ymin": 6643479.847875436,
-          "ymax": 6925073.860077889,
-          "wkid": 3857
-        }
-      },
-      "MappingResourceRegistryFactory": {
-        "_knownServices": {
-          "services": [
-            {
-              "id": "darkcanvas",
-              "type": "AGS_TILED",
-              "url": "https://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Dark_Gray_Base/MapServer"
-            },
-            {
-              "id": "service_81746",
-              "url": "https://services.conterra.de/arcgis/rest/services/mapapps/airtraffic/MapServer",
-              "type": "AGS_DYNAMIC",
-              "title": "",
-              "description": "Flughäfen in Deutschland (aus Open Street Map)",
-              "layers": [
-                {
-                  "id": "0",
-                  "title": "aerodrome2",
-                  "maxScale": 50000,
-                  "enabled": true
-                },
-                {
-                  "id": "1",
-                  "title": "aerodrome1",
-                  "maxScale": 50000,
-                  "enabled": true
-                },
-                {
-                  "id": "2",
-                  "title": "terminal",
-                  "minScale": 24000,
-                  "enabled": true
-                },
-                {
-                  "id": "3",
-                  "title": "Helipad",
-                  "minScale": 50000,
-                  "enabled": true
-                },
-                {
-                  "id": "4",
-                  "title": "runway",
-                  "minScale": 500000,
-                  "enabled": true
-                },
-                {
-                  "id": "5",
-                  "title": "taxiway",
-                  "minScale": 200000,
-                  "enabled": true
-                },
-                {
-                  "id": "6",
-                  "title": "runway",
-                  "minScale": 500000,
-                  "enabled": true
-                },
-                {
-                  "id": "7",
-                  "title": "taxiway",
-                  "minScale": 200000,
-                  "enabled": true
-                },
-                {
-                  "id": "8",
-                  "title": "terminal",
-                  "minScale": 2000000,
-                  "enabled": true
-                },
-                {
-                  "id": "9",
-                  "title": "apron",
-                  "minScale": 2000000,
-                  "enabled": true
-                },
-                {
-                  "id": "10",
-                  "title": "aerodrome",
-                  "minScale": 2000000,
-                  "enabled": true
-                }
-              ],
-              "options": {}
-            },
-            {
-              "id": "service_40288",
-              "url": "https://services.conterra.de/arcgis/rest/services/common/grenzen/MapServer",
-              "type": "AGS_DYNAMIC",
-              "title": "",
-              "description": "",
-              "layers": [
-                {
-                  "id": "0",
-                  "title": "Gemeinden",
-                  "enabled": true
-                },
-                {
-                  "id": "1",
-                  "title": "Kreise",
-                  "enabled": true
-                },
-                {
-                  "id": "2",
-                  "title": "Bundeslaender",
-                  "enabled": true
-                },
-                {
-                  "id": "3",
-                  "title": "World",
-                  "enabled": true
-                }
-              ],
-              "options": {}
-            },
-            {
-              "id": "service_68737",
-              "url": "https://services.conterra.de/arcgis/rest/services/common/standorte/FeatureServer",
-              "type": "AGS_FEATURE",
-              "title": "",
-              "description": "Standorte der Esri Deutschland Group",
-              "layers": [
-                {
-                  "id": "0",
-                  "title": "Standorte",
-                  "enabled": true
-                }
-              ],
-              "options": {}
-            }
-          ]
-        }
-      }
-    },
-    "mapflow": {
-      "MapFlow": {
-        "nodeDepth": 5,
-        "showScrollBar": true,
-        "singleSelectionMode": false,
-        "autoZoomTo": false,
-        "autoFlipActiveCover": true,
-        "autoActivate": false,
-        "contentFlowProperties": {
-          "useAddOns": false,
-          "circularFlow": true,
-          "reflectionHeight": 0,
-          "maxItemHeight": 200,
-          "relativeItemPosition": "top center",
-          "visibleItems": 4
-        }
-      }
-    },
-    "templates": {
-      "TemplateModel": {
-        "_selectedTemplate": "seasons"
-      },
-      "TemplateSelector": {
-        "componentEnabled": false
-      }
-    },
-    "toolset": {
-      "ToolsetManager": {
-        "toolsets": []
-      }
     }
-  }
 }

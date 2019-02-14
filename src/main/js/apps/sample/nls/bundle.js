@@ -14,5 +14,20 @@
  * limitations under the License.
  */
 module.exports = {
-    bundleName: "FeatureHighlighter"
+    root: {
+        apptitle: "map.apps 4 Sample",
+        map: {
+            esrisites: {
+                title: "Esri Germany Group Sites",
+                popup: {
+                    address: "Address",
+                    contact: "Contact",
+                    tel: "Telephone:",
+                    mail: "Email:",
+                    link: "Internet:"
+                }
+            }
+        }
+    },
+    "de": true
 };

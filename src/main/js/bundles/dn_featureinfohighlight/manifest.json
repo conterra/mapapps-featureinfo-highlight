@@ -1,99 +1,37 @@
 {
-  "Bundle-SymbolicName": "dn_featureinfohighlight",
-  "Bundle-Version": "1.0.5-SNAPSHOT",
-  "Bundle-Name": "${bundleName}",
-  "Bundle-Description": "${bundleDescription}",
-  "Bundle-Vendor": "con terra GmbH",
-  "Product-Name": "devnet-mapapps-featureinfo-highlight",
-  "Bundle-Category": [
-    "sample"
-  ],
-  "Bundle-Icon": {},
-  "Bundle-License": {},
-  "Require-Bundle": [
+  "name": "dn_featureinfohighlight",
+  "version": "2.0.0-SNAPSHOT",
+  "dependencies": {
+    "esri": "^4.5.0"
+  },
+  "main": "",
+  "components": [
     {
-      "name": "map",
-      "version": "^3.4.0"
-    },
-    {
-      "name": "featureinfo",
-      "version": "^3.4.0"
-    },
-    {
-      "name": "contentviewer",
-      "version": "^3.4.0"
-    }
-  ],
-  "Components": [
-    {
-      "name": "FeatureInfoHighlighter",
-      "properties": {
-      },
+      "name": "FeatureHighlightFactory",
+      "instanceFactory": true,
       "references": [
         {
+          "name": "_mapWidgetModel",
+          "providing": "map-widget.MapWidgetModel"
+        },
+        {
           "name": "_drawGeometryHandler",
-          "providing": "dn_featureinfoselector.DrawGeometryHandler"
-        },
-        {
-          "name": "_contentViewer",
-          "providing": "ct.contentviewer.ContentViewer"
-        },
-        {
-          "name": "_infoViewer",
-          "providing": "infoviewer.InfoViewer"
+          "providing": "dn_featureinfohighlight.DrawGeometryHandler"
         }
       ]
     },
     {
-      "name": "FeatureInfoController",
-      "properties": {
-      },
-      "provides": [
-      ],
-      "references": [
-      ]
-    },
-    {
-      "name": "FeatureInfoWidget",
-      "properties": {
-      },
-      "provides": [
-      ],
-      "references": [
-      ]
-    },
-    {
       "name": "DrawGeometryHandler",
-      "provides": "dn_featureinfoselector.DrawGeometryHandler",
+      "provides": "dn_featureinfohighlight.DrawGeometryHandler",
       "properties": {
         "pointSymbolSize": 10
       },
       "references": [
         {
-          "name": "_mapModel",
-          "providing": "ct.mapping.map.MapModel"
+          "name": "_mapWidgetModel",
+          "providing": "map-widget.MapWidgetModel"
         }
       ]
-    },
-    {
-      "name": "ContentRegistration",
-      "impl": "ct/Stateful",
-      "provides": [
-        "ct.contentviewer.ContentRule"
-      ],
-      "propertiesConstructor": true,
-      "properties": {
-        "contentRules": [
-          {
-            "matches": {
-              "context": {
-                "mapModelNodeId": "featureInfoHighlightGeometry"
-              }
-            },
-            "skip": true
-          }
-        ]
-      }
     }
   ]
 }

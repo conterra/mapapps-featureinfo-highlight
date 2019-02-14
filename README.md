@@ -1,7 +1,7 @@
 # FeatureInfo Highlight
-This bundle highlights features which where selected by the FeatureInfo bundle.
+This bundle highlights features for which a pop up was opened.
 
-This bundle is no longer needed for map.apps line 4 apps when using WebGL rendering and Feature Layers.
+When using map.apps line 4 it only needed when creating apps with MapServer Layers but not when using WebGL rendering and Feature Layers.
 
 Sample App
 ------------------
