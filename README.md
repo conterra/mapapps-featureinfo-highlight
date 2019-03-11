@@ -1,11 +1,11 @@
 # FeatureInfo Highlight
 This bundle highlights features for which a pop up was opened.
 
-When using map.apps line 4 it only needed when creating apps with MapServer Layers but not when using WebGL rendering and Feature Layers.
+When using map.apps line 4 it is only needed when creating apps with MapServer Layers but not when using WebGL rendering and Feature Layers.
 
 Sample App
 ------------------
-https://demos.conterra.de/mapapps/resources/apps/downloads_featureinfo_highlight/index.html
+https://demos.conterra.de/mapapps/resources/apps/downloads_featureinfo_highlight4/index.html
 
 ![Screenshot Highlight Sample App](https://github.com/conterra/mapapps-featureinfo-highlight/blob/master/highlighter.JPG)
 
