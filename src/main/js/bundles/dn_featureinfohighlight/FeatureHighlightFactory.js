@@ -18,18 +18,13 @@ export default class FeatureInfoHighlighter {
         let mapWidgetModel = this._mapWidgetModel;
         let drawGeometryHandler = this._drawGeometryHandler;
         this.waitForView(mapWidgetModel).then((view) => view.popup.watch("visible", () => {
-            if (view.popup.visible === true) {
-                if (view.popup.features.length !== 0) {
-                    view.popup.features.forEach(feature => {
-                        drawGeometryHandler.onPopupOpen(feature.geometry);
-                    });
-                    view.popup.watch("selectedFeature", (selectedFeature) => {
-                        if(selectedFeature){
-                            drawGeometryHandler.onPopupOpen(selectedFeature.geometry);
-
-                        }
-                    }, this)
-                }
+            if (view.popup.visible && view.popup.features.length !== 0) {
+                drawGeometryHandler.onPopupOpen(view.popup.features[0].geometry);
+                view.popup.watch("selectedFeature", (selectedFeature) => {
+                    if (selectedFeature) {
+                        drawGeometryHandler.onPopupOpen(selectedFeature.geometry);
+                    }
+                }, this)
             } else {
                 drawGeometryHandler.clearGraphics();
             }
