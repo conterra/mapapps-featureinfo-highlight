@@ -14,23 +14,18 @@
  * limitations under the License.
  */
 import Color from "esri/Color";
-import Polygon from "esri/geometry/Polygon";
+import Graphic from "esri/Graphic";
 import SimpleMarkerSymbol from "esri/symbols/SimpleMarkerSymbol";
 import SimpleFillSymbol from "esri/symbols/SimpleFillSymbol";
 import SimpleLineSymbol from "esri/symbols/SimpleLineSymbol";
-import Graphic from "esri/Graphic";
 
 export default class DrawGeometryHandler {
-    activate() {
-        let oldGraphic = this.oldGraphic;
-    }
 
     drawGeometry(geometry) {
         let view = this._mapWidgetModel.get("view");
 
         let graphic = this.graphic = new Graphic({
-            geometry: geometry,
-            //symbol: symbol
+            geometry: geometry
         });
         view.graphics.add(graphic);
 

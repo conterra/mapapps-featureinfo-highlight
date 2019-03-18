@@ -14,38 +14,31 @@
  * limitations under the License.
  */
 export default class FeatureInfoHighlighter {
+
     createInstance() {
         let mapWidgetModel = this._mapWidgetModel;
         let drawGeometryHandler = this._drawGeometryHandler;
-        this.waitForView(mapWidgetModel).then((view) = > view.popup.watch("visible", () = > {
-            if(view.popup.visible && view.popup.features.length !== 0
-    )
-        {
-            drawGeometryHandler.onPopupOpen(view.popup.features[0].geometry);
-            view.popup.watch("selectedFeature", (selectedFeature) = > {
-                if(selectedFeature) {
-                    drawGeometryHandler.onPopupOpen(selectedFeature.geometry);
-                }
-            }, this
-        )
-        }
-    else
-        {
-            drawGeometryHandler.clearGraphics();
-        }
-    }))
-        ;
+        this.waitForView(mapWidgetModel).then((view) => view.popup.watch("visible", () => {
+            if (view.popup.visible && view.popup.features.length !== 0) {
+                drawGeometryHandler.onPopupOpen(view.popup.features[0].geometry);
+                view.popup.watch("selectedFeature", (selectedFeature) => {
+                        if (selectedFeature) {
+                            drawGeometryHandler.onPopupOpen(selectedFeature.geometry);
+                        }
+                    }, this
+                )
+            } else {
+                drawGeometryHandler.clearGraphics();
+            }
+        }));
     }
 
     waitForView(mapWidgetModel) {
-        return new Promise(resolve = > {
-            mapWidgetModel.watch("view", () = > {
+        return new Promise(resolve => {
+            mapWidgetModel.watch("view", () => {
                 resolve(mapWidgetModel.view
-    )
-        ;
-    })
-        ;
-    })
-        ;
+                );
+            });
+        });
     }
 }
