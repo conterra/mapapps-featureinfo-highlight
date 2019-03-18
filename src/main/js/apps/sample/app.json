@@ -20,6 +20,12 @@
             "popups",
             "dn_featureinfohighlight",
             "console"
+        ],
+        "require": [
+            "${app}/app"
+        ],
+        "i18n": [
+            "bundle"
         ]
     },
     "bundles": {
