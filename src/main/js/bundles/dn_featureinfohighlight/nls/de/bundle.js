@@ -14,5 +14,6 @@
  * limitations under the License.
  */
 module.exports = {
-    bundleName: "FeatureHighlighter"
+    bundleName: "FeatureInfo Highlight",
+    bundleDescription: "Dieses Bundle hebt Features hervor, die mit Hilfe des FeatureInfo Bundles selektiert worden sind."
 };
