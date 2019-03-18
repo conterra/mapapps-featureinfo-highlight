@@ -30,20 +30,24 @@
         },
         "map-init": {
             "Config": {
-                "basemaps": [{
-                    "id": "streets",
-                    "basemap": "streets",
-                    "title": "Strassen",
-                    "selected": true
-                },{
-                    "id": "satellite",
-                    "basemap": "satellite",
-                    "title": "Satellit"
-                },{
-                    "id": "hybrid",
-                    "basemap": "hybrid",
-                    "title": "Hybrid"
-                }],
+                "basemaps": [
+                    {
+                        "id": "streets",
+                        "basemap": "streets",
+                        "title": "Strassen",
+                        "selected": true
+                    },
+                    {
+                        "id": "satellite",
+                        "basemap": "satellite",
+                        "title": "Satellit"
+                    },
+                    {
+                        "id": "hybrid",
+                        "basemap": "hybrid",
+                        "title": "Hybrid"
+                    }
+                ],
                 "map": {
                     "layers": [
                         {
@@ -76,7 +80,6 @@
                         }
                     ]
                 },
-
                 "view": {
                     "viewmode": "2D",
                     "extent": {
@@ -91,12 +94,9 @@
         },
         "popups": {
             "Config": {
-
                 "defaultPopupType": "default",
                 "defaultPopupEnabled": true,
-
                 "highlightEnabled": true
-
             }
         },
         "toolset": {
@@ -104,7 +104,9 @@
                 "toolsets": [
                     {
                         "id": "defaultToolSet",
-                        "tools": ["*"],
+                        "tools": [
+                            "*"
+                        ],
                         "registerWidget": {
                             "widgetRole": "map_topleft"
                         },

@@ -49,11 +49,13 @@ export default class DrawGeometryHandler {
         }
 
     }
+
     onPopupOpen(geometry) {
         this.clearGraphics();
         this.drawGeometry(geometry);
         this.oldGraphic = this.graphic;
     }
+
     clearGraphics() {
         if (this.oldGraphic) {
             let view = this._mapWidgetModel.get("view");
@@ -73,6 +75,7 @@ export default class DrawGeometryHandler {
             new Color([0, 255, 255, 0.1])
         );
     }
+
     _getSymbolForPoint() {
         return new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, this._properties.pointSymbolSize || 20,
             new SimpleLineSymbol(
@@ -83,6 +86,7 @@ export default class DrawGeometryHandler {
             new Color([0, 255, 255, 0.1])
         );
     }
+
     _getSymbolForPolyline() {
         return new SimpleLineSymbol(
             SimpleLineSymbol.STYLE_SOLID,

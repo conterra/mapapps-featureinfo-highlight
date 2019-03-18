@@ -1,37 +1,37 @@
 {
-  "name": "dn_featureinfohighlight",
-  "version": "2.0.1-SNAPSHOT",
-  "dependencies": {
-    "esri": "^4.5.0"
-  },
-  "main": "",
-  "components": [
-    {
-      "name": "FeatureHighlightFactory",
-      "instanceFactory": true,
-      "references": [
+    "name": "dn_featureinfohighlight",
+    "version": "2.0.1-SNAPSHOT",
+    "dependencies": {
+        "esri": "^4.5.0"
+    },
+    "main": "",
+    "components": [
         {
-          "name": "_mapWidgetModel",
-          "providing": "map-widget.MapWidgetModel"
+            "name": "FeatureHighlightFactory",
+            "instanceFactory": true,
+            "references": [
+                {
+                    "name": "_mapWidgetModel",
+                    "providing": "map-widget.MapWidgetModel"
+                },
+                {
+                    "name": "_drawGeometryHandler",
+                    "providing": "dn_featureinfohighlight.DrawGeometryHandler"
+                }
+            ]
         },
         {
-          "name": "_drawGeometryHandler",
-          "providing": "dn_featureinfohighlight.DrawGeometryHandler"
+            "name": "DrawGeometryHandler",
+            "provides": "dn_featureinfohighlight.DrawGeometryHandler",
+            "properties": {
+                "pointSymbolSize": 10
+            },
+            "references": [
+                {
+                    "name": "_mapWidgetModel",
+                    "providing": "map-widget.MapWidgetModel"
+                }
+            ]
         }
-      ]
-    },
-    {
-      "name": "DrawGeometryHandler",
-      "provides": "dn_featureinfohighlight.DrawGeometryHandler",
-      "properties": {
-        "pointSymbolSize": 10
-      },
-      "references": [
-        {
-          "name": "_mapWidgetModel",
-          "providing": "map-widget.MapWidgetModel"
-        }
-      ]
-    }
-  ]
+    ]
 }
