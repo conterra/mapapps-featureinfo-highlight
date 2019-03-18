@@ -14,17 +14,5 @@
  * limitations under the License.
  */
 module.exports = {
-    apptitle: "map.apps 4 Sample",
-    map: {
-        esrisites: {
-            title: "Standorte der Esri Deutschland Gruppe",
-            popup: {
-                address: "Adresse",
-                contact: "Kontakt",
-                tel: "Telefon:",
-                mail: "Email:",
-                link: "Internet:"
-            }
-        }
-    }
+    apptitle: "Featureinfo Highlight Sample"
 };
