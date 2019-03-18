@@ -7,7 +7,7 @@ Sample App
 ------------------
 https://demos.conterra.de/mapapps/resources/apps/downloads_featureinfo_highlight4/index.html
 
-![Screenshot Highlight Sample App](https://github.com/conterra/mapapps-featureinfo-highlight/blob/master/highlighter.JPG)
+![Screenshot Highlight Sample App](https://github.com/conterra/mapapps-featureinfo-highlight/blob/master/screenshot.JPG)
 
 Installation Guide
 ------------------
