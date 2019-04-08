@@ -28,18 +28,21 @@ export default class DrawGeometryHandler {
             geometry: geometry
         });
         view.graphics.add(graphic);
-
+        let polygonColor = this._properties.polygonColor.slice(0);
+        polygonColor.splice(-1,1);
+        let pointColor = this._properties.pointColor.slice(0);
+        pointColor.splice(-1,1);
         switch (geometry.type) {
             case "polygon":
             case "extent":
-                graphic.symbol = this._getSymbolForPolygon();
+                graphic.symbol = this._getSymbolForPolygon(this._properties.polygonColor, polygonColor);
                 break;
             case "point":
             case "multipoint":
-                graphic.symbol = this._getSymbolForPoint();
+                graphic.symbol = this._getSymbolForPoint(this._properties.pointColor, pointColor);
                 break;
             case "polyline":
-                graphic.symbol = this._getSymbolForPolyline();
+                graphic.symbol = this._getSymbolForPolyline(this._properties.polylineColor);
                 break;
         }
 
@@ -59,33 +62,33 @@ export default class DrawGeometryHandler {
 
     }
 
-    _getSymbolForPolygon() {
+    _getSymbolForPolygon(color, lineColor) {
         return new SimpleFillSymbol(
             SimpleFillSymbol.STYLE_SOLID,
             new SimpleLineSymbol(
                 SimpleLineSymbol.STYLE_SOLID,
-                new Color([0, 255, 255]),
+                new Color(lineColor),
                 3
             ),
-            new Color([0, 255, 255, 0.1])
+            new Color(color)
         );
     }
 
-    _getSymbolForPoint() {
+    _getSymbolForPoint(color, lineColor) {
         return new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, this._properties.pointSymbolSize || 20,
             new SimpleLineSymbol(
                 SimpleLineSymbol.STYLE_SOLID,
-                new Color([0, 255, 255]),
+                new Color(lineColor),
                 3
             ),
-            new Color([0, 255, 255, 0.1])
+            new Color(color)
         );
     }
 
-    _getSymbolForPolyline() {
+    _getSymbolForPolyline(color) {
         return new SimpleLineSymbol(
             SimpleLineSymbol.STYLE_SOLID,
-            new Color([0, 255, 255]),
+            new Color(color),
             3
         );
     }
