@@ -37,6 +37,13 @@
                 "link": "http://developernetwork.conterra.de"
             }
         },
+        "dn_featureinfohighlight": {
+            "DrawGeometryHandler": {
+                "polygonColor": [0, 255, 255, 0.2],
+                "pointColor": [255, 0, 255, 0.2],
+                "polylineColor": [0, 255, 255]
+            }
+        },
         "map-init": {
             "Config": {
                 "basemaps": [

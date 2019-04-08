@@ -27,7 +27,10 @@
             "name": "DrawGeometryHandler",
             "provides": "dn_featureinfohighlight.DrawGeometryHandler",
             "properties": {
-                "pointSymbolSize": 10
+                "pointSymbolSize": 10,
+                "polygonColor": [0, 255, 255, 0.2],
+                "pointColor": [255, 0, 255, 0.2],
+                "polylineColor": [0, 255, 255]
             },
             "references": [
                 {

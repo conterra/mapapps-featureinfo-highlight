@@ -13,6 +13,24 @@ Installation Guide
 ------------------
 In order to use the "dn_featureinfohighlight" bundle, simply add it to your app - no further configuration is required.
 
+If you would like to configure the colors of the highlights add the following configuration to your app.json 
+
+    "dn_featureinfohighlight": {
+            "DrawGeometryHandler": {
+                "polygonColor": [red, green, blue, transparency (of fill color)],
+                "pointColor": [red, green, blue, transparency (of fill color)],
+                "polylineColor": [red, green, blue]
+            }
+        },
+        
+The default values for the colors are:
+ 
+polygonColor: [0, 255, 255, 0.2]
+
+pointColor: [255, 0, 255, 0.2]
+
+polylineColor: [0, 255, 255]
+
 Development Guide
 ------------------
 ### Define the mapapps remote base
