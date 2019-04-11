@@ -11,7 +11,6 @@
     "components": [
         {
             "name": "FeatureHighlightFactory",
-            "instanceFactory": true,
             "references": [
                 {
                     "name": "_mapWidgetModel",
