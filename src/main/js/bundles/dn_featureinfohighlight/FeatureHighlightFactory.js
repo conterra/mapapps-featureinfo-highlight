@@ -36,8 +36,7 @@ export default class FeatureInfoHighlighter {
     waitForView(mapWidgetModel) {
         return new Promise(resolve => {
             mapWidgetModel.watch("view", () => {
-                resolve(mapWidgetModel.view
-                );
+                resolve(mapWidgetModel.view);
             });
         });
     }

@@ -13,11 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import Color from "esri/Color";
 import Graphic from "esri/Graphic";
-import SimpleMarkerSymbol from "esri/symbols/SimpleMarkerSymbol";
-import SimpleFillSymbol from "esri/symbols/SimpleFillSymbol";
-import SimpleLineSymbol from "esri/symbols/SimpleLineSymbol";
 
 export default class DrawGeometryHandler {
 
@@ -27,21 +23,21 @@ export default class DrawGeometryHandler {
         let graphic = this.graphic = new Graphic({
             geometry: geometry
         });
-        view.graphics.add(graphic);
+        let properties = this._properties;
         switch (geometry.type) {
-            case "polygon":
-            case "extent":
-                graphic.symbol = this._getSymbolForPolygon(this._properties.polygonStyle);
-                break;
             case "point":
             case "multipoint":
-                graphic.symbol = this._getSymbolForPoint(this._properties.pointStyle);
+                graphic.symbol = properties.pointSymbol;
                 break;
             case "polyline":
-                graphic.symbol = this._getSymbolForPolyline(this._properties.polylineStyle);
+                graphic.symbol = properties.polylineSymbol;
+                break;
+            case "polygon":
+            case "extent":
+                graphic.symbol = properties.polygonSymbol;
                 break;
         }
-
+        view.graphics.add(graphic);
     }
 
     onPopupOpen(geometry) {
@@ -55,39 +51,6 @@ export default class DrawGeometryHandler {
             let view = this._mapWidgetModel.get("view");
             view.graphics.remove(this.oldGraphic);
         }
-
-    }
-
-    _getSymbolForPolygon(symbolDef) {
-        return new SimpleFillSymbol(symbolDef.style,
-            new SimpleLineSymbol(
-                symbolDef.outline.style,
-                new Color( symbolDef.outline.color),
-                symbolDef.outline.width
-            ),
-            new Color(symbolDef.color)
-        );
-    }
-
-    _getSymbolForPoint(symbolDef) {
-        return new SimpleMarkerSymbol({
-                color: new Color(symbolDef.color),
-                angle: symbolDef.angle,
-                xoffset: symbolDef.xoffset,
-                yoffset: symbolDef.yoffset,
-                size: symbolDef.size,
-                style: symbolDef.style,
-                outline: new SimpleLineSymbol(
-                    symbolDef.outline.style,
-                    new Color(symbolDef.outline.color),
-                    symbolDef.outline.width
-                )
-            }
-        );
-    }
-
-    _getSymbolForPolyline(symbolDef) {
-        return new SimpleLineSymbol(symbolDef.style, new Color(symbolDef.outline.color), symbolDef.outline.width);
     }
 }
 
