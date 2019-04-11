@@ -28,21 +28,17 @@ export default class DrawGeometryHandler {
             geometry: geometry
         });
         view.graphics.add(graphic);
-        let polygonColor = this._properties.polygonColor.slice(0);
-        polygonColor.splice(-1,1);
-        let pointColor = this._properties.pointColor.slice(0);
-        pointColor.splice(-1,1);
         switch (geometry.type) {
             case "polygon":
             case "extent":
-                graphic.symbol = this._getSymbolForPolygon(this._properties.polygonColor, polygonColor);
+                graphic.symbol = this._getSymbolForPolygon(this._properties.polygonStyle);
                 break;
             case "point":
             case "multipoint":
-                graphic.symbol = this._getSymbolForPoint(this._properties.pointColor, pointColor);
+                graphic.symbol = this._getSymbolForPoint(this._properties.pointStyle);
                 break;
             case "polyline":
-                graphic.symbol = this._getSymbolForPolyline(this._properties.polylineColor);
+                graphic.symbol = this._getSymbolForPolyline(this._properties.polylineStyle);
                 break;
         }
 
@@ -62,35 +58,36 @@ export default class DrawGeometryHandler {
 
     }
 
-    _getSymbolForPolygon(color, lineColor) {
-        return new SimpleFillSymbol(
-            SimpleFillSymbol.STYLE_SOLID,
+    _getSymbolForPolygon(symbolDef) {
+        return new SimpleFillSymbol(symbolDef.style,
             new SimpleLineSymbol(
-                SimpleLineSymbol.STYLE_SOLID,
-                new Color(lineColor),
-                3
+                symbolDef.outline.style,
+                new Color( symbolDef.outline.color),
+                symbolDef.outline.width
             ),
-            new Color(color)
+            new Color(symbolDef.color)
         );
     }
 
-    _getSymbolForPoint(color, lineColor) {
-        return new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, this._properties.pointSymbolSize || 20,
-            new SimpleLineSymbol(
-                SimpleLineSymbol.STYLE_SOLID,
-                new Color(lineColor),
-                3
-            ),
-            new Color(color)
+    _getSymbolForPoint(symbolDef) {
+        return new SimpleMarkerSymbol({
+                color: new Color(symbolDef.color),
+                angle: symbolDef.angle,
+                xoffset: symbolDef.xoffset,
+                yoffset: symbolDef.yoffset,
+                size: symbolDef.size,
+                style: symbolDef.style,
+                outline: new SimpleLineSymbol(
+                    symbolDef.outline.style,
+                    new Color(symbolDef.outline.color),
+                    symbolDef.outline.width
+                )
+            }
         );
     }
 
-    _getSymbolForPolyline(color) {
-        return new SimpleLineSymbol(
-            SimpleLineSymbol.STYLE_SOLID,
-            new Color(color),
-            3
-        );
+    _getSymbolForPolyline(symbolDef) {
+        return new SimpleLineSymbol(symbolDef.style, new Color(symbolDef.outline.color), symbolDef.outline.width);
     }
 }
 

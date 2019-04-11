@@ -27,10 +27,35 @@
             "name": "DrawGeometryHandler",
             "provides": "dn_featureinfohighlight.DrawGeometryHandler",
             "properties": {
-                "pointSymbolSize": 10,
-                "polygonColor": [0, 255, 255, 0.2],
-                "pointColor": [255, 0, 255, 0.2],
-                "polylineColor": [0, 255, 255]
+                "DrawGeometryHandler": {
+                    "polygonStyle": {
+                        "color": [0, 255, 255, 0.25],
+                        "style": "solid",
+                        "outline": {
+                            "color": [0, 0, 0, 1],
+                            "width": 0.2,
+                            "style": "solid"
+                        }
+                    },
+                    "pointStyle": {
+                        "color": [0, 255, 255, 0.25 ],
+                        "angle": 0,
+                        "xoffset": 0,
+                        "yoffset": 0,
+                        "size": 12,
+                        "style": "circle",
+                        "outline": {
+                            "color": [0, 0, 0, 1],
+                            "width": 0.75,
+                            "style": "solid"
+                        }
+                    },
+                    "polylineStyle": {
+                        "color": [0, 255, 255, 1],
+                        "style": "solid",
+                        "width": 0.75
+                    }
+                }
             },
             "references": [
                 {
