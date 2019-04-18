@@ -16,7 +16,7 @@
 module.exports = {
     root: ({
         bundleName: "FeatureInfo Highlight",
-        bundleDescription: "This bundle highlights features which where selected by the FeatureInfo."
+        bundleDescription: "This bundle highlights the geometry of a feature whose information is displayed in a popup."
     }),
     "de": true
 };

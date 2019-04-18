@@ -15,5 +15,5 @@
  */
 module.exports = {
     bundleName: "FeatureInfo Highlight",
-    bundleDescription: "Dieses Bundle hebt Features hervor, die mit Hilfe des FeatureInfo Bundles selektiert worden sind."
+    bundleDescription: "Dieses Bundle hebt die Geometrie eines Features hervor, dessen Informationen in einem Popup angezeigt werden."
 };
