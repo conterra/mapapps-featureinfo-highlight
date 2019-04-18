@@ -26,56 +26,59 @@
             "name": "DrawGeometryHandler",
             "provides": "dn_featureinfohighlight.DrawGeometryHandler",
             "properties": {
-                "DrawGeometryHandler": {
-                    "pointSymbol": {
-                        "type": "simple-marker",
-                        "style": "circle",
-                        "color": [0, 255, 255, 0.25 ],
-                        "outline": {
-                            "style": "solid",
-                            "width": 0.5,
-                            "color": [
-                                0,
-                                0,
-                                0,
-                                1
-                            ]
-                        },
-                        "angle": 0,
-                        "size": 12,
-                        "xoffset": 0,
-                        "yoffset": 0
-                    },
-                    "polylineSymbol": {
-                        "type": "simple-line",
+                "pointSymbol": {
+                    "type": "simple-marker",
+                    "style": "circle",
+                    "color": [
+                        0,
+                        255,
+                        255,
+                        0.25
+                    ],
+                    "outline": {
                         "style": "solid",
-                        "width": 2,
+                        "width": 0.5,
                         "color": [
                             0,
-                            255,
-                            255,
+                            0,
+                            0,
                             1
                         ]
                     },
-                    "polygonSymbol": {
-                        "type": "simple-fill",
+                    "angle": 0,
+                    "size": 12,
+                    "xoffset": 0,
+                    "yoffset": 0
+                },
+                "polylineSymbol": {
+                    "type": "simple-line",
+                    "style": "solid",
+                    "width": 2,
+                    "color": [
+                        0,
+                        255,
+                        255,
+                        1
+                    ]
+                },
+                "polygonSymbol": {
+                    "type": "simple-fill",
+                    "style": "solid",
+                    "color": [
+                        0,
+                        255,
+                        255,
+                        0.25
+                    ],
+                    "outline": {
+                        "width": 0.5,
                         "style": "solid",
                         "color": [
                             0,
-                            255,
-                            255,
-                            0.25
-                        ],
-                        "outline": {
-                            "width": 0.5,
-                            "style": "solid",
-                            "color": [
-                                0,
-                                0,
-                                0,
-                                1
-                            ]
-                        }
+                            0,
+                            0,
+                            1
+                        ]
                     }
                 }
             },
