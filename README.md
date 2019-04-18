@@ -1,5 +1,5 @@
 # FeatureInfo Highlight
-This bundle highlights features for which a pop up was opened.
+This bundle highlights the geometry of a feature whose information is displayed in a popup.
 
 When using map.apps line 4 it is only needed when creating apps with MapServer Layers but not when using WebGL rendering and Feature Layers.
 
