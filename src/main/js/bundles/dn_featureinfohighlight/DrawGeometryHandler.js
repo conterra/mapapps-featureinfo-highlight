@@ -40,9 +40,14 @@ export default class DrawGeometryHandler {
         view.graphics.add(graphic);
     }
 
-    onPopupOpen(geometry) {
+    onPopupOpen(feature) {
+        const geometry = feature.geometry;
+        const sourceLayer = feature.sourceLayer;
+        const sourceLayerType = sourceLayer.source && sourceLayer.source.type;
         this.clearGraphics();
-        this.drawGeometry(geometry);
+        if (sourceLayerType && sourceLayerType === "map-layer") {
+            this.drawGeometry(geometry);
+        }
         this.oldGraphic = this.graphic;
     }
 
