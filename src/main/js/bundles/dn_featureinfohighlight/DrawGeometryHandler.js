@@ -20,7 +20,7 @@ export default class DrawGeometryHandler {
     drawGeometry(geometry) {
         let view = this._mapWidgetModel.get("view");
 
-        let graphic = this.graphic = new Graphic({
+        let graphic = new Graphic({
             geometry: geometry
         });
         let properties = this._properties;
@@ -38,6 +38,7 @@ export default class DrawGeometryHandler {
                 break;
         }
         view.graphics.add(graphic);
+        return graphic;
     }
 
     onPopupOpen(feature) {
@@ -46,15 +47,14 @@ export default class DrawGeometryHandler {
         const sourceLayerType = sourceLayer.source && sourceLayer.source.type;
         this.clearGraphics();
         if (sourceLayerType && sourceLayerType === "map-layer") {
-            this.drawGeometry(geometry);
+            this.graphic = this.drawGeometry(geometry);
         }
-        this.oldGraphic = this.graphic;
     }
 
     clearGraphics() {
-        if (this.oldGraphic) {
+        if (this.graphic) {
             let view = this._mapWidgetModel.get("view");
-            view.graphics.remove(this.oldGraphic);
+            view.graphics.remove(this.graphic);
         }
     }
 }
