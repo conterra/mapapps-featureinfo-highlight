@@ -16,31 +16,29 @@
 export default class FeatureInfoHighlighter {
 
     activate() {
-        let mapWidgetModel = this._mapWidgetModel;
-        if (mapWidgetModel.view) {
-            this.watchPopup(mapWidgetModel.view);
-        } else {
-            mapWidgetModel.watch("view", (view) => {
-                if (view.value) {
-                    this.watchPopup(view.value);
-                }
-            });
-        }
+        this._getView().then((view) => {
+            this.watchPopup(view);
+        });
+    }
+
+    _getView() {
+        const mapWidgetModel = this._mapWidgetModel;
+        return new Promise((resolve, reject) => {
+            if (mapWidgetModel.view) {
+                resolve(mapWidgetModel.view);
+            } else {
+                mapWidgetModel.watch("view", ({value: view}) => {
+                    resolve(view);
+                });
+            }
+        });
     }
 
     watchPopup(view) {
         let drawGeometryHandler = this._drawGeometryHandler;
-        view.popup.watch("visible", () => {
-            if (view.popup.visible && view.popup.features.length !== 0) {
-                drawGeometryHandler.onPopupOpen(view.popup.features[0]);
-                view.popup.watch("selectedFeature", (selectedFeature) => {
-                        if (selectedFeature) {
-                            drawGeometryHandler.onPopupOpen(selectedFeature);
-                        }
-                    }
-                );
-            } else {
-                drawGeometryHandler.clearGraphics();
+        view.popup.watch("selectedFeature", (selectedFeature) => {
+            if (selectedFeature) {
+                drawGeometryHandler.onPopupOpen(selectedFeature);
             }
         });
     }
