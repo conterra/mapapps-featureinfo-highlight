@@ -21,21 +21,23 @@ It is possible to configure the highlight symbols in the app.json.
         "pointSymbol": {
             "type": "simple-marker",
             "style": "circle",
-            "color": [0, 255, 255, 0.25 ],
+            "size": 12,
+            "color": [
+                0,
+                255,
+                255,
+                0.25
+            ],
             "outline": {
                 "style": "solid",
-                "width": 0.5,
+                "width": 2,
                 "color": [
                     0,
-                    0,
-                    0,
+                    255,
+                    255,
                     1
                 ]
-            },
-            "angle": 0,
-            "size": 12,
-            "xoffset": 0,
-            "yoffset": 0
+            }
         },
         "polylineSymbol": {
             "type": "simple-line",
@@ -58,12 +60,12 @@ It is possible to configure the highlight symbols in the app.json.
                 0.25
             ],
             "outline": {
-                "width": 0.5,
+                "width": 2,
                 "style": "solid",
                 "color": [
                     0,
-                    0,
-                    0,
+                    255,
+                    255,
                     1
                 ]
             }

@@ -8,18 +8,20 @@
             "bundles"
         ],
         "allowedBundles": [
-            "system@^4.5.0",
-            "splashscreen@^4.5.0",
-            "templatelayout@^4.5.0",
-            "template-seasons@^4.5.0",
-            "theme-everlasting@^4.5.0",
-            "toolset@^4.5.0",
-            "map-init@^4.5.0",
+            "system",
+            "splashscreen",
+            "templatelayout",
+            "template-seasons",
+            "theme-everlasting",
+            "toolset",
+            "map-init",
+            "map-preload-2D",
+            "mapnavigation",
             "banner",
             "popups-default",
             "popups",
-            "dn_featureinfohighlight",
-            "console"
+            "toc",
+            "dn_featureinfohighlight"
         ],
         "require": [
             "${app}/app"
@@ -43,21 +45,23 @@
                 "pointSymbol": {
                     "type": "simple-marker",
                     "style": "circle",
-                    "color": [0, 255, 255, 0.25 ],
+                    "size": 12,
+                    "color": [
+                        0,
+                        255,
+                        255,
+                        0.25
+                    ],
                     "outline": {
                         "style": "solid",
-                        "width": 0.5,
+                        "width": 2,
                         "color": [
                             0,
-                            0,
-                            0,
+                            255,
+                            255,
                             1
                         ]
-                    },
-                    "angle": 0,
-                    "size": 12,
-                    "xoffset": 0,
-                    "yoffset": 0
+                    }
                 },
                 "polylineSymbol": {
                     "type": "simple-line",
@@ -80,12 +84,12 @@
                         0.25
                     ],
                     "outline": {
-                        "width": 0.5,
+                        "width": 2,
                         "style": "solid",
                         "color": [
                             0,
-                            0,
-                            0,
+                            255,
+                            255,
                             1
                         ]
                     }
@@ -115,7 +119,14 @@
                 "map": {
                     "layers": [
                         {
+                            "id": "stoerungen",
+                            "title": "Störungen",
+                            "type": "AGS_FEATURE",
+                            "url": "https://services.conterra.de/arcgis/rest/services/mapapps/stoerung/FeatureServer/1"
+                        },
+                        {
                             "id": "airtraffic",
+                            "title": "Airtraffic",
                             "type": "AGS_DYNAMIC",
                             "url": "https://services.conterra.de/arcgis/rest/services/mapapps/airtraffic/MapServer",
                             "sublayers": [
@@ -128,17 +139,25 @@
                             ]
                         },
                         {
-                            "title": "baum",
-                            "type": "AGS_FEATURE",
-                            "url": " https://services.conterra.de/arcgis/rest/services/mapapps/Baumkataster_Zustand/FeatureServer/0"
-                        },
-                        {
-                            "title": "borders",
+                            "id": "grenzen_mapserver",
+                            "title": "Grenzen",
                             "type": "AGS_DYNAMIC",
                             "url": "https://services.conterra.de/arcgis/rest/services/common/grenzen/MapServer",
                             "sublayers": [
                                 {
-                                    "id": "1"
+                                    "id": "0",
+                                    "visible": false
+                                },
+                                {
+                                    "id": "1",
+                                    "visible": false
+                                },
+                                {
+                                    "id": "2"
+                                },
+                                {
+                                    "id": "3",
+                                    "visible": false
                                 }
                             ]
                         }
@@ -167,12 +186,15 @@
             "ToolsetManager": {
                 "toolsets": [
                     {
-                        "id": "defaultToolSet",
+                        "id": "mapview_tools",
                         "tools": [
-                            "*"
+                            "zoomInTool",
+                            "zoomOutTool",
+                            "compassTool",
+                            "restoreInitialViewTool"
                         ],
                         "registerWidget": {
-                            "widgetRole": "map_topleft"
+                            "widgetRole": "mapview_tools"
                         },
                         "container": "ignore",
                         "windowType": "container",
