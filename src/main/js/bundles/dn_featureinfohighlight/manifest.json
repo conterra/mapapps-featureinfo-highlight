@@ -1,6 +1,6 @@
 {
     "name": "dn_featureinfohighlight",
-    "version": "2.1.2",
+    "version": "2.1.3-SNAPSHOT",
     "title": "${bundleName}",
     "description": "${bundleDescription}",
     "vendor": "con terra GmbH",
