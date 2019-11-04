@@ -37,8 +37,15 @@ export default class FeatureInfoHighlighter {
     watchPopup(view) {
         let drawGeometryHandler = this._drawGeometryHandler;
         view.popup.watch("selectedFeature", (selectedFeature) => {
-            if (selectedFeature) {
+            if (view.popup.visible && selectedFeature) {
                 drawGeometryHandler.onPopupOpen(selectedFeature);
+            } else {
+                drawGeometryHandler.clearGraphics();
+            }
+        });
+        view.popup.watch("visible", () => {
+            if (!view.popup.visible) {
+                drawGeometryHandler.clearGraphics();
             }
         });
     }
