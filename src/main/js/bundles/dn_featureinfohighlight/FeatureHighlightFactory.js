@@ -13,12 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+import Observers from "apprt-core/Observers";
+
+const _observers = Symbol("_observers");
+
 export default class FeatureInfoHighlighter {
 
     activate() {
+        this[_observers] = Observers();
         this._getView().then((view) => {
             this.watchPopup(view);
         });
+    }
+
+    deactivate() {
+        this._drawGeometryHandler.clearGraphics();
+        this[_observers].clean();
     }
 
     _getView() {
@@ -36,17 +47,17 @@ export default class FeatureInfoHighlighter {
 
     watchPopup(view) {
         let drawGeometryHandler = this._drawGeometryHandler;
-        view.popup.watch("selectedFeature", (selectedFeature) => {
+        this[_observers].add(view.popup.watch("selectedFeature", (selectedFeature) => {
             if (view.popup.visible && selectedFeature) {
                 drawGeometryHandler.onPopupOpen(selectedFeature);
             } else {
                 drawGeometryHandler.clearGraphics();
             }
-        });
-        view.popup.watch("visible", () => {
+        }));
+        this[_observers].add(view.popup.watch("visible", () => {
             if (!view.popup.visible) {
                 drawGeometryHandler.clearGraphics();
             }
-        });
+        }));
     }
 }
