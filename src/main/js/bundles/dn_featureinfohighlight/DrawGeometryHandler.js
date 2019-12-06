@@ -42,12 +42,17 @@ export default class DrawGeometryHandler {
     }
 
     onPopupOpen(feature) {
+        this.clearGraphics();
+        if (!feature) {
+            return;
+        }
         const geometry = feature.geometry;
         const sourceLayer = feature.sourceLayer;
-        const sourceLayerType = sourceLayer.source && sourceLayer.source.type;
-        this.clearGraphics();
-        if (sourceLayerType && sourceLayerType === "map-layer") {
-            this.graphic = this.drawGeometry(geometry);
+        if(sourceLayer) {
+            const sourceLayerType = sourceLayer.source && sourceLayer.source.type;
+            if (sourceLayerType && sourceLayerType === "map-layer") {
+                this.graphic = this.drawGeometry(geometry);
+            }
         }
     }
 
