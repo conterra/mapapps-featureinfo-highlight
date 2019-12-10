@@ -20,7 +20,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>de.conterra.devnet</groupId>
     <artifactId>mapapps-featureinfo-highlight</artifactId>
-    <version>1.0.5-SNAPSHOT</version>
+    <version>1.0.5</version>
     <packaging>jar</packaging>
     <!-- DISABLE repositories and pluginRepositories if inside the con terra! -->
     <repositories>
@@ -289,7 +289,7 @@
                     <!-- add here properties which are used in plugin configuration resolution -->
                     <properties>
                         <!-- deployment of map.apps installation -->
-                        <mapapps.remote.base/>
+                        <mapapps.remote.base />
                     </properties>
                 </configuration>
             </plugin>
@@ -389,7 +389,7 @@
                                     <!-- remove bundleLocations from app.json -->
                                     <token>\s*"bundleLocations"\s*:\s*\[\s*"localbundles"\s*,\s*"bundles"\s*\]\s*,\s*
                                     </token>
-                                    <value></value>
+                                    <value />
                                 </replacement>
                             </replacements>
                         </configuration>
@@ -495,7 +495,7 @@
         <connection>scm:git:https://github.com/conterra/mapapps-featureinfo-highlight.git</connection>
         <developerConnection>scm:git:https://github.com/conterra/mapapps-featureinfo-highlight.git</developerConnection>
         <url>https://github.com/conterra/mapapps-featureinfo-highlight</url>
-        <tag>HEAD</tag>
+        <tag>1.0.5</tag>
     </scm>
     <distributionManagement>
         <repository>
