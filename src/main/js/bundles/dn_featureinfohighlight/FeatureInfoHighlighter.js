@@ -40,6 +40,10 @@ define([
                     this.con.disconnect();
                 }, this);
             }, this);
+        },
+
+        deactivate: function() {
+            this.disconnect();
         }
     });
 });
