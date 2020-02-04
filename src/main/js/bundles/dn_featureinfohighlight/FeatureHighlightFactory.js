@@ -45,19 +45,21 @@ export default class FeatureInfoHighlighter {
         });
     }
 
-    watchPopup(view) {
+    _checkForHighlight(popup) {
         let drawGeometryHandler = this._drawGeometryHandler;
-        this[_observers].add(view.popup.watch("selectedFeature", (selectedFeature) => {
-            if (view.popup.visible && selectedFeature) {
-                drawGeometryHandler.onPopupOpen(selectedFeature);
-            } else {
-                drawGeometryHandler.clearGraphics();
-            }
+        if (popup.visible && popup.selectedFeature) {
+            drawGeometryHandler.onPopupOpen(popup.selectedFeature);
+        } else {
+            drawGeometryHandler.clearGraphics();
+        }
+    }
+
+    watchPopup(view) {
+        this[_observers].add(view.popup.watch("selectedFeature", () => {
+            this._checkForHighlight(view.popup);
         }));
         this[_observers].add(view.popup.watch("visible", () => {
-            if (!view.popup.visible) {
-                drawGeometryHandler.clearGraphics();
-            }
+            this._checkForHighlight(view.popup);
         }));
     }
 }
