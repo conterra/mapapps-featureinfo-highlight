@@ -3,12 +3,6 @@ This bundle highlights features which where selected by the FeatureInfo bundle.
 
 This bundle is no longer needed for map.apps line 4 apps when using WebGL rendering and Feature Layers.
 
-Sample App
-------------------
-https://demos.conterra.de/mapapps/resources/apps/downloads_featureinfo_highlight/index.html
-
-![Screenshot Highlight Sample App](https://github.com/conterra/mapapps-featureinfo-highlight/blob/master/highlighter.JPG)
-
 Installation Guide
 ------------------
 In order to use the "dn_featureinfohighlight" bundle, simply add it to your app - no further configuration is required.
