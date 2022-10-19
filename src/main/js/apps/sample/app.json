@@ -119,6 +119,18 @@
                 "map": {
                     "layers": [
                         {
+                            "id": "fliessgewaesser",
+                            "url": "https://geoportal.bafg.de/arcgis3/rest/services/WKSB_2021/Oberflaechenwasserkoerper/MapServer",
+                            "type": "AGS_DYNAMIC",
+                            "title": "Fließgewässer",
+                            "sublayers": [
+                                {
+                                    "id": 1,
+                                    "visible": true
+                                }
+                            ]
+                        },
+                        {
                             "id": "stoerungen",
                             "title": "Störungen",
                             "type": "AGS_FEATURE",
