@@ -11,84 +11,17 @@ https://demos.conterra.de/mapapps/resources/apps/downloads_featureinfo_highlight
 ## Installation Guide
 In order to use the "dn_featureinfohighlight" bundle, simply add it to your app - no further configuration is required.
 
-It is possible to configure the highlight symbols in the app.json.
-
-### Configurable Components of dn_featureinfohighlight:
-#### DrawGeometryHandler
-```
-"dn_featureinfohighlight": {
-    "DrawGeometryHandler": {
-        "pointSymbol": {
-            "type": "simple-marker",
-            "style": "circle",
-            "size": 12,
-            "color": [
-                0,
-                255,
-                255,
-                0.25
-            ],
-            "outline": {
-                "style": "solid",
-                "width": 2,
-                "color": [
-                    0,
-                    255,
-                    255,
-                    1
-                ]
-            }
-        },
-        "polylineSymbol": {
-            "type": "simple-line",
-            "style": "solid",
-            "width": 2,
-            "color": [
-                0,
-                255,
-                255,
-                1
-            ]
-        },
-        "polygonSymbol": {
-            "type": "simple-fill",
-            "style": "solid",
-            "color": [
-                0,
-                255,
-                255,
-                0.25
-            ],
-            "outline": {
-                "width": 2,
-                "style": "solid",
-                "color": [
-                    0,
-                    255,
-                    255,
-                    1
-                ]
-            }
-        }
-    }
-}
-```
-
-More information about esri symbols:
-https://developers.arcgis.com/javascript/latest/api-reference/esri-symbols-Symbol.html
-
-To easily create your own symbols use the symbol playground:
-https://developers.arcgis.com/javascript/latest/sample-code/playground/index.html
+[dn_featureinfohighlight Documentation](https://github.com/conterra/mapapps-featureinfo-highlight/tree/master/src/main/js/bundles/dn_featureinfohighlight)
 
 ## Development Guide
 ### Define the mapapps remote base
 Before you can run the project you have to define the mapapps.remote.base property in the pom.xml-file:
 `<mapapps.remote.base>http://%YOURSERVER%/ct-mapapps-webapp-%VERSION%</mapapps.remote.base>`
 
-### Other methods to to define the mapapps.remote.base property.
+### Other methods to define the mapapps.remote.base property.
 1. Goal parameters
-`mvn install -Dmapapps.remote.base=http://%YOURSERVER%/ct-mapapps-webapp-%VERSION%`
+   `mvn install -Dmapapps.remote.base=http://%YOURSERVER%/ct-mapapps-webapp-%VERSION%`
 
 2. Build properties
-Change the mapapps.remote.base in the build.properties file and run:
-`mvn install -Denv=dev -Dlocal.configfile=%ABSOLUTEPATHTOPROJECTROOT%/build.properties`
+   Change the mapapps.remote.base in the build.properties file and run:
+   `mvn install -Denv=dev -Dlocal.configfile=%ABSOLUTEPATHTOPROJECTROOT%/build.properties`
