@@ -12,7 +12,7 @@
             "splashscreen",
             "templatelayout",
             "template-seasons",
-            "theme-everlasting",
+            "theme-autumn",
             "toolset",
             "map-init",
             "map-preload-2D",
@@ -125,20 +125,6 @@
                             "url": "https://services.conterra.de/arcgis/rest/services/mapapps/stoerung/FeatureServer/1"
                         },
                         {
-                            "id": "airtraffic",
-                            "title": "Airtraffic",
-                            "type": "AGS_DYNAMIC",
-                            "url": "https://services.conterra.de/arcgis/rest/services/mapapps/airtraffic/MapServer",
-                            "sublayers": [
-                                {
-                                    "id": 0
-                                },
-                                {
-                                    "id": 1
-                                }
-                            ]
-                        },
-                        {
                             "id": "grenzen_mapserver",
                             "title": "Grenzen",
                             "type": "AGS_DYNAMIC",
@@ -150,10 +136,11 @@
                                 },
                                 {
                                     "id": "1",
-                                    "visible": false
+                                    "visible": true
                                 },
                                 {
-                                    "id": "2"
+                                    "id": "2",
+                                    "visible": false
                                 },
                                 {
                                     "id": "3",
