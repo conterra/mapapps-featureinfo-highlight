@@ -5,11 +5,6 @@ This bundle highlights the geometry of a feature whose information is displayed 
 
 ![Screenshot Highlight Sample App](https://github.com/conterra/mapapps-featureinfo-highlight/blob/master/screenshot.JPG)
 
-When using map.apps line 4 it is only needed when creating apps with MapServer Layers but not when using WebGL rendering and Feature Layers.
-
-## Sample App
-https://demos.conterra.de/mapapps/resources/apps/downloads_featureinfo_highlight4/index.html
-
 ## Build Status
 [![devnet-bundle-snapshot](https://github.com/conterra/mapapps-featureinfo-highlight/actions/workflows/devnet-bundle-snapshot.yml/badge.svg)](https://github.com/conterra/mapapps-featureinfo-highlight/actions/workflows/devnet-bundle-snapshot.yml)
 
