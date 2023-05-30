@@ -1,4 +1,6 @@
 # FeatureInfo Highlight
+⚠️ This bundle is no longer needed in map.apps 4.15 or later.
+
 This bundle highlights the geometry of a feature whose information is displayed in a popup.
 
 ![Screenshot Highlight Sample App](https://github.com/conterra/mapapps-featureinfo-highlight/blob/master/screenshot.JPG)
